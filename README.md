@@ -1,48 +1,37 @@
-# Astro Starter Kit: Basics
+# Porfolio PaulDev - Web Developer Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+👋 ¡Hola! Soy Paúl Esteban, conocido como **PaulDev**, un desarrollador web apasionado por crear soluciones frontend y backend eficientes, centradas en la experiencia de usuario.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🛠 Tecnologías y Herramientas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Frontend**: Astro, Tailwind CSS, JavaScript, TypeScript
+- **Backend**: Node.js, APIs REST
+- **Version Control**: Git, GitHub
+- **Otras herramientas**: pnpm, Netlify
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🚀 Proyectos Destacados
 
-## 🚀 Project Structure
+### [📽 Proyecto de Películas](https://github.com/Paul1226/MoviesTMDB)
 
-Inside of your Astro project, you'll see the following folders and files:
+Aplicación que permite a los usuarios explorar y buscar películas, utilizando una API de terceros para mostrar información detallada de cada película.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### 🌐 [Template-Portfolio](https://github.com/Paul1226/Template-Porfolio)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Una página creada para profundizar el conocimiento en css practicando con flex-box y grids, la página es completamente responsive y con gran manejo de las nuevas tecnoñogías como Astro y Tailwind.
 
-## 🧞 Commands
+### Nuevo Proyecto - Store - Courses
 
-All commands are run from the root of the project, from a terminal:
+Actualmente me encuentro desarrollando una página web en la simula el comportamiento de una tienda online, profundizando conocimientos en JavaScript y el manejo de base de datos.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📚 En constante aprendizaje
 
-## 👀 Want to learn more?
+Actualmente estoy profundizando en:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- React
+- APIs y manejo de datos
+- Mejora continua en diseño web
+
+## 📫 Conecta conmigo
+
+- [LinkedIn](https://www.linkedin.com/in/paul-guachichullca-2287602b1/)
+- [Correo Electrónico](mailto:paulguachichullca023@gmail.com)

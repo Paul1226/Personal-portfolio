@@ -1,0 +1,82 @@
+---
+import Cross from "../icons/Cross.astro";
+import Menu from "../icons/Menu.astro";
+const classLink =
+  "text-green-950 px-2 py-1 block uppercase text-2xl font-semibold tracking-wide md:text-lg md:font-light md:text-black";
+---
+
+<header class="w-full md:fixed md:top-0 md:left-0">
+  <section
+    class="flex justify-between items-center w-full max-w-6xl mx-auto px-4 py-5"
+  >
+    <div class="logo">
+      <a href="/" class="flex flex-col md:flex-row md:items-end relative z-10">
+        <div class="flex items-center gap-2">
+          <span class="block bg-green-800 w-4 h-4 rounded-sm"></span>
+          <span class="font-black text-3xl">Paul Dev</span>
+        </div>
+        <span class="uppercase tracking-wide">/ Frontend developer</span>
+      </a>
+    </div>
+
+    <nav class="nav-container">
+      <div class="content-btns grid place-content-center md:hidden">
+        <a href="#nav" class="[grid-area:icons] btn">
+          <Menu />
+        </a>
+        <a href="#" class="[grid-area:icons] btn btn-cross">
+          <Cross />
+        </a>
+      </div>
+      <ul
+        class="nav-list absolute left-0 right-0 h-full bg-gold-200 flex justify-center items-center flex-col gap-2 md:relative md:bg-white md:flex-row md:z-0"
+        id="nav"
+      >
+        <li class="literals-list">
+          <a class={`link-nav ${classLink}`} href="#">sobre mí</a>
+        </li>
+        <li class="literals-list">
+          <a class={`link-nav ${classLink}`} href="#">currículum</a>
+        </li>
+        <li class="literals-list">
+          <a class={`link-nav ${classLink}`} href="#">proyectos</a>
+        </li>
+        <li class="literals-list">
+          <a class={`link-nav ${classLink}`} href="#">contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<style>
+  .nav-container {
+    /* variables */
+    --scale: scale(1);
+    --no-scale: scale(0);
+    --bottom: 100%;
+  }
+  .content-btns {
+    grid-template-areas: "icons";
+  }
+
+  .btn {
+    transform: var(--scale);
+    position: relative;
+    z-index: 10;
+  }
+  .btn-cross {
+    transform: var(--no-scale);
+  }
+  .nav-list {
+    top: unset;
+    bottom: var(--bottom);
+    transition: bottom 300ms;
+  }
+
+  .nav-container:has(.nav-list:target) {
+    --scale: scale(0);
+    --no-scale: scale(1);
+    --bottom: 0;
+  }
+</style>

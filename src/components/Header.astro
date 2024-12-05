@@ -29,7 +29,7 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 h-full bg-gold-200/60 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 h-full bg-gold-100/50 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
         <li>
@@ -78,5 +78,22 @@ const classLink =
     --scale: scale(0);
     --no-scale: scale(1);
     --bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    header {
+      animation: scroll-header linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 150px;
+    }
+  }
+
+  @keyframes scroll-header {
+    100% {
+      background-color: #ffffff80;
+      backdrop-filter: blur(0.65rem);
+      border-bottom-left-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+    }
   }
 </style>

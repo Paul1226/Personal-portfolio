@@ -4,6 +4,9 @@ interface Props {
 }
 const { title } = Astro.props;
 
+// components
+import Footer from "../assets/Footer.astro";
+
 // fonts
 // 300-900
 import "@fontsource-variable/red-hat-display";
@@ -20,6 +23,7 @@ import "@fontsource-variable/red-hat-display";
   </head>
   <body class="relative -z-50">
     <slot />
+    <Footer />
   </body>
 </html>
 

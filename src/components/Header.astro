@@ -2,10 +2,10 @@
 import Cross from "../icons/Cross.astro";
 import Menu from "../icons/Menu.astro";
 const classLink =
-  "text-green-950 px-2 py-1 block uppercase text-2xl font-semibold tracking-wide md:text-lg md:font-light md:text-black";
+  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light md:text-black md:hover:text-bluee-500";
 ---
 
-<header class="w-full md:fixed md:top-0 md:left-0">
+<header class="w-full md:sticky md:top-0 md:left-0 md:z-10">
   <section
     class="flex justify-between items-center w-full max-w-6xl mx-auto px-4 py-5"
   >
@@ -29,20 +29,20 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 h-full bg-gold-200 flex justify-center items-center flex-col gap-2 md:relative md:bg-white md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 h-full bg-gold-200/60 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
-        <li class="literals-list">
-          <a class={`link-nav ${classLink}`} href="#">sobre mí</a>
+        <li>
+          <a class={`link-nav ${classLink}`} href="#about">sobre&nbsp;mí</a>
         </li>
-        <li class="literals-list">
-          <a class={`link-nav ${classLink}`} href="#">currículum</a>
+        <li>
+          <a class={`link-nav ${classLink}`} href="#curriculum">currículum</a>
         </li>
-        <li class="literals-list">
-          <a class={`link-nav ${classLink}`} href="#">proyectos</a>
+        <li>
+          <a class={`link-nav ${classLink}`} href="#projects">proyectos</a>
         </li>
-        <li class="literals-list">
-          <a class={`link-nav ${classLink}`} href="#">contacto</a>
+        <li>
+          <a class={`link-nav ${classLink}`} href="#contact">contacto</a>
         </li>
       </ul>
     </nav>
@@ -71,7 +71,7 @@ const classLink =
   .nav-list {
     top: unset;
     bottom: var(--bottom);
-    transition: bottom 300ms;
+    transition: bottom 500ms;
   }
 
   .nav-container:has(.nav-list:target) {

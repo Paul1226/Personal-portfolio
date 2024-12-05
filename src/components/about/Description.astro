@@ -1,0 +1,20 @@
+---
+interface Props {
+  isDark?: boolean;
+  className?: string;
+}
+const { isDark = true, className } = Astro.props;
+const textColor: string = isDark ? "text-black" : "text-white";
+---
+
+<div class:list={[textColor, className, "flex flex-col gap-4"]}>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae obcaecati
+    numquam vel repellendus repudiandae incidunt delectus debitis odio deleniti
+    cupiditate.
+  </p>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non qui, deserunt
+    earum iure aspernatur veniam.
+  </p>
+</div>

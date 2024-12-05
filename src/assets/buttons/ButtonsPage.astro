@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  isPrincipal?: boolean;
+}
+
+const { href, text, isPrincipal = false } = Astro.props;
+
+const classLink =
+  "block px-4 py-1 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:scale-[1.07] transition-transform duration-300";
+---
+
+{
+  isPrincipal ? (
+    <a
+      class:list={["bg-bluee-500 border-bluee-500 text-gold-50", classLink]}
+      href={href}
+    >
+      {text}
+    </a>
+  ) : (
+    <a class:list={[classLink, "border-black"]} href={href}>
+      {" "}
+      {text}
+    </a>
+  )
+}

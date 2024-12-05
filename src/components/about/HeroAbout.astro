@@ -1,0 +1,22 @@
+---
+import Btn from "../../assets/buttons/ButtonsPage.astro";
+import Presentation from "./Presentation.astro";
+import Description from "./Description.astro";
+---
+
+<section class="w-11/12 mx-auto flex flex-col gap-6">
+  <Presentation className="hidden md:flex" />
+  <div
+    class="btns-hero flex items-center justify-center gap-4 md:justify-start"
+  >
+    <Btn href="#" text="curriculum" isPrincipal />
+    <Btn href="#" text="proyectos" />
+  </div>
+  <Description className="hidden md:flex" />
+</section>
+
+<style>
+  section {
+    grid-area: main;
+  }
+</style>

@@ -1,7 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TitlePage from "../assets/TitlePage.astro";
+import SecProjects from "../components/projects/SecProjects.astro";
 ---
 
 <Layout title="Paul Dev - Projects">
-  <section>Proyectos</section>
+  <section class="w-full bg-gold-50 py-8">
+    <main class="w-11/12 mx-auto max-w-6xl flex flex-col gap-8">
+      <article class="w-full">
+        <TitlePage text="Proyectos" />
+        <p class="w-full max-w-xl mx-auto pt-4">
+          Como desarrollador web, me especializo en crear interfaces atractivas
+          y funcionales con un enfoque en el frontend utilizando tecnologías
+          modernas como HTML, CSS, JavaScript. Actualmente, estoy ampliando mis
+          habilidades al explorar e implementar conceptos de backend para
+          desarrollar aplicaciones más completas y dinámicas.
+        </p>
+      </article>
+      <SecProjects />
+    </main>
+  </section>
 </Layout>

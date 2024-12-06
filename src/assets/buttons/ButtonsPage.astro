@@ -16,11 +16,12 @@ const classLink =
     <a
       class:list={["bg-bluee-500 border-bluee-500 text-gold-50", classLink]}
       href={href}
+      target="_blank"
     >
       {text}
     </a>
   ) : (
-    <a class:list={[classLink, "border-black"]} href={href}>
+    <a class:list={[classLink, "border-black"]} href={href} target="_blank">
       {text}
     </a>
   )

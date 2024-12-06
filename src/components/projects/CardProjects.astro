@@ -1,0 +1,46 @@
+---
+import { type Project } from "../../data/Projects";
+import Btn from "../../assets/buttons/ButtonsPage.astro";
+import ListIcons from "./ListIcons.astro";
+
+interface Props {
+  datos: Project;
+}
+
+const { name, description, image, linkGit, linkPage, technologies } =
+  Astro.props.datos;
+---
+
+<article
+  class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-4 rounded-lg shadow-xl pl-5"
+>
+  <div class="flex flex-col gap-4">
+    <header class="relative before:bg-bluee-500">
+      <h5 class="text-bluee-500 font-bold">{name}</h5>
+      <ListIcons list={technologies} />
+    </header>
+    <p>{description}</p>
+    <div class="links flex items-center gap-4">
+      <Btn href={linkPage} isPrincipal text="Visitar" />
+      <Btn href={linkGit} text="Código" />
+    </div>
+  </div>
+  <figure class="w-full rounded-lg overflow-hidden">
+    <img
+      class="w-full h-full aspect-video object-cover"
+      src={image}
+      alt={`Proyecto de ${name}`}
+    />
+  </figure>
+</article>
+
+<style>
+  header::before {
+    content: "";
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+  }
+</style>

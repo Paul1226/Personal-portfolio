@@ -3,7 +3,7 @@ import Cross from "../icons/Cross.astro";
 import Menu from "../icons/Menu.astro";
 const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
-  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light md:text-black md:hover:text-bluee-500";
+  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-bluee-500";
 ---
 
 <header class="w-full md:sticky md:top-0 md:left-0 md:z-10">
@@ -43,7 +43,7 @@ const classLink =
           <a
             class:list={{
               [classLink]: true,
-              active: currentPath === "/Curriculum",
+              active: currentPath === "/Curriculum/",
             }}
             href="/Curriculum">currículum</a
           >
@@ -52,7 +52,7 @@ const classLink =
           <a
             class:list={{
               [classLink]: true,
-              active: currentPath === "/Projects",
+              active: currentPath === "/Projects/",
             }}
             href="/Projects">proyectos</a
           >
@@ -61,7 +61,7 @@ const classLink =
           <a
             class:list={{
               [classLink]: true,
-              active: currentPath === "/Contact",
+              active: currentPath === "/Contact/",
             }}
             href="/Contact">contacto</a
           >

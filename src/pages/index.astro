@@ -27,7 +27,7 @@ import BgCardAbout from "../components/about/BgCardAbout.astro";
         <BgCardAbout />
       </div>
     </div>
-    <div class="bg-green-900 content-presentation-description w-full md:hidden">
+    <div class="bg-green-700 content-presentation-description w-full md:hidden">
       <div class="w-11/12 mx-auto py-6 flex flex-col gap-8">
         <Presentation isDark={false} />
         <Description isDark={false} />
@@ -43,6 +43,9 @@ import BgCardAbout from "../components/about/BgCardAbout.astro";
     grid-template-areas: "header" "main" "footer";
     gap: 1rem;
     column-gap: 2.5rem;
+  }
+  .content-presentation-description {
+    background-image: url("/textures/45-degree-fabric-dark.webp");
   }
 
   @media (min-width: 768px) {

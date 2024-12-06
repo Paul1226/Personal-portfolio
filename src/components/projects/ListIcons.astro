@@ -1,0 +1,56 @@
+---
+import AstroIcon from "../../icons/AstroIcon.astro";
+import Tailwind from "../../icons/Tailwind.astro";
+import Css from "../../icons/Css.astro";
+import JavaScript from "../../icons/JavaScript.astro";
+import TypeScript from "../../icons/TypeScript.astro";
+
+interface Props {
+  list: string[];
+}
+const list = Astro.props.list;
+const styleIcon = "h-5 w-auto";
+---
+
+<ul class="flex items-center gap-2">
+  {
+    list.map((tecn) => {
+      if (tecn === "Astro") {
+        return (
+          <li>
+            <AstroIcon class={styleIcon} />
+          </li>
+        );
+      }
+      if (tecn === "Css") {
+        return (
+          <li>
+            <Css class={styleIcon} />
+          </li>
+        );
+      }
+      if (tecn === "JavaScript") {
+        return (
+          <li>
+            <JavaScript class={styleIcon} />
+          </li>
+        );
+      }
+      if (tecn === "TypeScript") {
+        return (
+          <li>
+            <TypeScript class={styleIcon} />
+          </li>
+        );
+      }
+      if (tecn === "Tailwind") {
+        return (
+          <li>
+            <Tailwind class={styleIcon} />
+          </li>
+        );
+      }
+      return <li>{tecn}</li>;
+    })
+  }
+</ul>

@@ -1,6 +1,7 @@
 ---
 import Cross from "../icons/Cross.astro";
 import Menu from "../icons/Menu.astro";
+const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
   "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light md:text-black md:hover:text-bluee-500";
 ---
@@ -33,16 +34,37 @@ const classLink =
         id="nav"
       >
         <li>
-          <a class={`link-nav ${classLink}`} href="#about">sobre&nbsp;mí</a>
+          <a
+            class:list={{ [classLink]: true, active: currentPath === "/" }}
+            href="/">sobre&nbsp;mí</a
+          >
         </li>
         <li>
-          <a class={`link-nav ${classLink}`} href="#curriculum">currículum</a>
+          <a
+            class:list={{
+              [classLink]: true,
+              active: currentPath === "/Curriculum",
+            }}
+            href="/Curriculum">currículum</a
+          >
         </li>
         <li>
-          <a class={`link-nav ${classLink}`} href="#projects">proyectos</a>
+          <a
+            class:list={{
+              [classLink]: true,
+              active: currentPath === "/Projects",
+            }}
+            href="/Projects">proyectos</a
+          >
         </li>
         <li>
-          <a class={`link-nav ${classLink}`} href="#contact">contacto</a>
+          <a
+            class:list={{
+              [classLink]: true,
+              active: currentPath === "/Contact",
+            }}
+            href="/Contact">contacto</a
+          >
         </li>
       </ul>
     </nav>
@@ -74,6 +96,10 @@ const classLink =
     transition: bottom 500ms;
   }
 
+  .nav-list li a.active {
+    color: #0050ff;
+  }
+
   .nav-container:has(.nav-list:target) {
     --scale: scale(0);
     --no-scale: scale(1);
@@ -84,16 +110,17 @@ const classLink =
     header {
       animation: scroll-header linear both;
       animation-timeline: scroll(root block);
-      animation-range: 0 150px;
+      animation-range: 0 100px;
     }
   }
 
   @keyframes scroll-header {
     100% {
-      background-color: #ffffff80;
-      backdrop-filter: blur(0.65rem);
+      background-color: #ffffffa2;
+      backdrop-filter: blur(0.7rem);
       border-bottom-left-radius: 0.75rem;
       border-bottom-right-radius: 0.75rem;
+      box-shadow: 0 10px 10px #00000020;
     }
   }
 </style>

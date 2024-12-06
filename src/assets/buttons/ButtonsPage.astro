@@ -8,7 +8,7 @@ interface Props {
 const { href, text, isPrincipal = false } = Astro.props;
 
 const classLink =
-  "block px-4 py-1 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:scale-[1.07] transition-transform duration-300";
+  "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:scale-[1.07] transition-transform duration-300";
 ---
 
 {
@@ -21,7 +21,6 @@ const classLink =
     </a>
   ) : (
     <a class:list={[classLink, "border-black"]} href={href}>
-      {" "}
       {text}
     </a>
   )

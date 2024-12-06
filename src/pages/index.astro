@@ -1,16 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import About from "../components/About.astro";
-import Curriculum from "../components/Curriculum.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
+import CoverImage from "../components/about/CoverImage.astro";
+import HeroAbout from "../components/about/HeroAbout.astro";
+import SocialNetworks from "../components/about/SocialNetworks.astro";
+import Presentation from "../components/about/Presentation.astro";
+import Description from "../components/about/Description.astro";
+
+import BgAbout from "../components/about/BgAbout.astro";
+import BgCardAbout from "../components/about/BgCardAbout.astro";
 ---
 
 <Layout title="Paul Dev - Personal portfolio">
-  <Header />
-  <About />
-  <Curriculum />
-  <Projects />
-  <Contact />
+  <section class="relative -z-10">
+    <div class="relative w-full h-full py-5 md:py-8">
+      <!-- background tras la card de presentacion -->
+      <BgAbout />
+
+      <div
+        class="w-11/12 mx-auto max-w-4xl rounded-md content-card py-4 px-6 relative overflow-hidden"
+      >
+        <CoverImage />
+        <HeroAbout />
+        <SocialNetworks />
+
+        <!-- background dentro de card de presentacion -->
+        <BgCardAbout />
+      </div>
+    </div>
+    <div class="bg-green-900 content-presentation-description w-full md:hidden">
+      <div class="w-11/12 mx-auto py-6 flex flex-col gap-8">
+        <Presentation isDark={false} />
+        <Description isDark={false} />
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .content-card {
+    box-shadow: 0 0px 15px #00000020;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    gap: 1rem;
+    column-gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .content-card {
+      grid-template-areas: "header main" "footer main";
+    }
+  }
+</style>

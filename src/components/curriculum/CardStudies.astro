@@ -1,0 +1,25 @@
+---
+import { type Education } from "../../data/Studies";
+interface Props {
+  datos: Education;
+}
+
+const { date, degree, description, institution, institutionUbi } =
+  Astro.props.datos;
+---
+
+<article
+  class="grid grid-cols-1 gap-4 md:grid-cols-2 bg-white p-4 rounded-lg shadow-2xl"
+>
+  <div class="flex flex-col gap-4">
+    <h3 class="text-bluee-500 font-bold">{date}</h3>
+    <div class="s">
+      <span>{degree}</span>
+      <span>{institution}</span>
+    </div>
+    <p class="pt-1">{institutionUbi}</p>
+  </div>
+  <div class="d">
+    <p>{description}</p>
+  </div>
+</article>

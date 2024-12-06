@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/curriculum/Experience.astro";
+import TitlePage from "../assets/TitlePage.astro";
+import Btn from "../assets/buttons/ButtonsPage.astro";
+import Studies from "../components/curriculum/Studies.astro";
+---
+
+<Layout title="Paul Dev - Curriculum">
+  <section class="w-full bg-gold-50 py-8">
+    <main class="w-11/12 mx-auto max-w-6xl flex flex-col gap-4">
+      <TitlePage text="Curriculum" />
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-bold">Experiencia</h3>
+        <Btn href="#" text="Descargar CV" isPrincipal />
+      </div>
+      <Experience />
+      <h3 class="text-2xl font-bold pt-4">Estudios</h3>
+      <Studies />
+    </main>
+  </section>
+</Layout>

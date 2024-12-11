@@ -11,7 +11,7 @@ const classLink =
     class="flex justify-between items-center w-full max-w-6xl mx-auto px-4 py-5"
   >
     <div class="logo">
-      <a href="/" class="flex flex-col md:flex-row md:items-end relative z-10">
+      <a href="/" class="flex flex-col md:flex-row md:items-end relative z-20">
         <div class="flex items-center gap-2">
           <span class="block bg-green-800 w-4 h-4 rounded-sm"></span>
           <span class="font-black text-3xl">Paul Dev</span>
@@ -30,13 +30,16 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 h-full bg-gold-100/50 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 z-10 h-full bg-gold-100/50 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
         <li>
           <a
-            class:list={{ [classLink]: true, active: currentPath === "/" }}
-            href="/">sobre&nbsp;mí</a
+            class:list={{
+              [classLink]: true,
+              active: currentPath === "/About/",
+            }}
+            href="/About">sobre&nbsp;mí</a
           >
         </li>
         <li>
@@ -85,7 +88,7 @@ const classLink =
   .btn {
     transform: var(--scale);
     position: relative;
-    z-index: 10;
+    z-index: 20;
   }
   .btn-cross {
     transform: var(--no-scale);

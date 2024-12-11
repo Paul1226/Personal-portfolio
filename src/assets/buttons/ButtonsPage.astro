@@ -3,12 +3,14 @@ interface Props {
   href: string;
   text: string;
   isPrincipal?: boolean;
+  pageOut?: boolean;
 }
 
-const { href, text, isPrincipal = false } = Astro.props;
+const { href, text, isPrincipal = false, pageOut = false } = Astro.props;
+const target = pageOut ? "_blank" : "_self";
 
 const classLink =
-  "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:scale-[1.07] transition-transform duration-300";
+  "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:scale-[1.07] transition-all duration-300 hover:shadow-lg";
 ---
 
 {
@@ -16,12 +18,12 @@ const classLink =
     <a
       class:list={["bg-bluee-500 border-bluee-500 text-gold-50", classLink]}
       href={href}
-      target="_blank"
+      target={target}
     >
       {text}
     </a>
   ) : (
-    <a class:list={[classLink, "border-black"]} href={href} target="_blank">
+    <a class:list={[classLink, "border-black"]} href={href} target={target}>
       {text}
     </a>
   )

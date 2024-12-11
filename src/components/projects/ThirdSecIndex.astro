@@ -1,0 +1,75 @@
+---
+import TitlePage from "../../assets/TitlePage.astro";
+import SectionCardIndex from "../../assets/SectionCardIndex.astro";
+import ButtonsPage from "../../assets/buttons/ButtonsPage.astro";
+import CardExpIndex from "../curriculum/CardExpIndex.astro";
+import { projects } from "../../data/Projects";
+const exp = projects.slice(0, 2);
+---
+
+<SectionCardIndex>
+  <!-- section of curriculum -->
+
+  <!-- header -->
+  <article class="[grid-area:header] w-full" slot={"content-into-card"}>
+    <TitlePage text="proyectos" />
+    <p class="pt-4">
+      Desarrollador web especializado en frontend, creando interfaces atractivas
+      y funcionales. Actualmente, estoy ampliando mis habilidades al explorar e
+      implementar conceptos de backend para desarrollar aplicaciones más
+      completas.
+    </p>
+  </article>
+
+  <!-- main -->
+  <article
+    class="[grid-ares:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    <div class="ss">
+      {
+        exp.map(({ summary, name }) => (
+          <CardExpIndex
+            position={name}
+            companyName={""}
+            date={""}
+            summary={summary}
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center">
+      <ButtonsPage href="/Projects/" text="ver más" isPrincipal />
+    </div>
+  </article>
+
+  <!-- footer -->
+  <!-- <article
+    class="[grid-ares:footer] w-full hidden md:flex justify-center"
+    slot={"content-into-card"}
+  >
+    <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
+  </article> -->
+
+  <!-- out card-mobile -->
+  <article class="" slot={"content-out-card"}>
+    <div class="ss">
+      {
+        exp.map(({ summary, name }) => (
+          <CardExpIndex
+            position={name}
+            companyName={""}
+            date={""}
+            summary={summary}
+            inGreen
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center">
+      <ButtonsPage href="/Projects/" text="ver más" isPrincipal />
+    </div>
+  </article>
+</SectionCardIndex>

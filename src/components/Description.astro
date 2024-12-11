@@ -1,0 +1,29 @@
+---
+interface Props {
+  isDark?: boolean;
+  className?: string;
+}
+const { isDark = true, className } = Astro.props;
+const textColor: string = isDark ? "text-black" : "text-white";
+
+const classP = "font-light md:font-normal";
+const classStrong = "font-bold";
+---
+
+<div class:list={[textColor, className, "flex flex-col gap-4 text-gray-800"]}>
+  <p class={classP}>
+    Soy un <strong class={classStrong}>desarrollador front-end</strong> enfocado
+    en crear soluciones digitales eficientes y creativas, especializado en <strong
+      class={classStrong}>Astro, Tailwind CSS y TypeScript</strong
+    >, mientras amplio mis habilidades con <strong class={classStrong}
+      >React</strong
+    >.
+  </p>
+  <p class={classP}>
+    Me destaco por mi responsabilidad y compromiso en cada proyecto. Si buscas
+    creatividad y eficiencia, <a
+      class="font-bold transition-all duration-300 hover:scale-105 hover:text-bluee-500 inline-block"
+      href="/Contact/">¡HABLEMOS!</a
+    >
+  </p>
+</div>

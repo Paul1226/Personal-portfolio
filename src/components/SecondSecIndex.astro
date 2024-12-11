@@ -1,0 +1,73 @@
+---
+import TitlePage from "../assets/TitlePage.astro";
+import SectionCardIndex from "../assets/SectionCardIndex.astro";
+import ButtonsPage from "../assets/buttons/ButtonsPage.astro";
+import CardExpIndex from "./curriculum/CardExpIndex.astro";
+import { experiences } from "../data/Experience";
+const exp = experiences.slice(0, 2);
+---
+
+<SectionCardIndex>
+  <!-- section of curriculum -->
+
+  <!-- header -->
+  <article class="[grid-area:header] w-full" slot={"content-into-card"}>
+    <TitlePage text="curriculum" />
+    <p class="pt-4">
+      Mi formación académica está enfoca en el desarrollo web, con énfasis en
+      frontend y aprendizaje de backend, complementada con proyectos prácticos.
+    </p>
+  </article>
+
+  <!-- main -->
+  <article
+    class="[grid-ares:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    <div class="ss">
+      {
+        exp.map(({ position, companyName, date, summary }) => (
+          <CardExpIndex
+            position={position}
+            companyName={companyName}
+            date={date}
+            summary={summary}
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center">
+      <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
+    </div>
+  </article>
+
+  <!-- footer -->
+  <!-- <article
+    class="[grid-ares:footer] w-full hidden md:flex justify-center"
+    slot={"content-into-card"}
+  >
+    <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
+  </article> -->
+
+  <!-- out card-mobile -->
+  <article class="" slot={"content-out-card"}>
+    <div class="ss">
+      {
+        exp.map(({ position, companyName, date, summary }) => (
+          <CardExpIndex
+            position={position}
+            companyName={companyName}
+            date={date}
+            summary={summary}
+            inGreen
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center">
+      <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
+    </div>
+  </article>
+</SectionCardIndex>

@@ -1,0 +1,45 @@
+---
+import BgAbout from "../components/BgAbout.astro";
+import BgCardAbout from "../components/BgCardAbout.astro";
+---
+
+<section class="relative">
+  <div class="relative w-full h-full py-5 md:py-8 max-w-7xl mx-auto">
+    <!-- background tras la card de presentacion -->
+    <BgAbout />
+
+    <div
+      class="w-11/12 mx-auto max-w-4xl rounded-md content-card py-4 px-6 relative overflow-hidden"
+    >
+      <slot name="content-into-card" />
+
+      <!-- background dentro de card de presentacion -->
+      <BgCardAbout />
+    </div>
+  </div>
+  <div class="bg-green-700 content-presentation-description w-full md:hidden">
+    <div class="w-11/12 mx-auto py-6 flex flex-col gap-8">
+      <slot name="content-out-card" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .content-card {
+    box-shadow: 0 0px 15px #00000020;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    gap: 1rem;
+    column-gap: 2.5rem;
+  }
+  .content-presentation-description {
+    background-image: url("/textures/45-degree-fabric-dark.webp");
+  }
+
+  @media (min-width: 768px) {
+    .content-card {
+      grid-template-areas: "header main" "footer main";
+      grid-template-columns: 14rem 1fr;
+    }
+  }
+</style>

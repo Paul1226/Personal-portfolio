@@ -48,4 +48,32 @@ import ClientRouter from "astro/components/ClientRouter.astro";
     font-family: "Red Hat Display Variable", sans-serif;
     scroll-behavior: smooth;
   }
+
+  body {
+    --sb-track-color: #ffffff09;
+    --sb-thumb-color: #15803d;
+    --sb-size: 8px;
+  }
+
+  body::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 10px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    /* border-color: var(--sb-track-color); */
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+  }
 </style>

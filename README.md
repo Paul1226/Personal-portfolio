@@ -35,3 +35,7 @@ Actualmente estoy profundizando en:
 
 - [LinkedIn](https://www.linkedin.com/in/paul-guachichullca-2287602b1/)
 - [Correo Electrónico](mailto:paulguachichullca023@gmail.com)
+
+Soy un desarrollador front-end apasionado por crear soluciones digitales eficientes y creativas. Me especializo en el desarrollo con Astro, Tailwind CSS y TypeScript, y actualmente estoy ampliando mis habilidades aprendiendo React. Mi enfoque combina atención al detalle y un fuerte compromiso con mi trabajo, asegurando resultados visualmente atractivos y funcionales.
+
+Me caracterizo por ser una persona, responsable y comprometido con cada proyecto en el que participo. Si buscas a alguien que combine creatividad y eficiencia, ¡HABLEMOS!

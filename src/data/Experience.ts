@@ -4,6 +4,7 @@ export type Experience = {
   companyName: string;
   companyUbi: string;
   description: string;
+  summary: string;
 };
 
 export const experiences: Experience[] = [
@@ -14,6 +15,8 @@ export const experiences: Experience[] = [
     companyUbi: "Cuenca, Ecuador",
     description:
       "Desarrollo de interfaces de usuario usando React y Tailwind CSS. Trabajé en la mejora de la accesibilidad y la optimización de la performance en aplicaciones web.",
+    summary:
+      "Desarrollé interfaces, mejorando accesibilidad y optimizando rendimiento en aplicaciones web.",
   },
   {
     date: "Jul 2020 - Dic 2021",
@@ -21,7 +24,9 @@ export const experiences: Experience[] = [
     companyName: "WebDev Studios",
     companyUbi: "Cuenca, Ecuador",
     description:
-      "Desarrollo de sitios web estáticos y dinámicos usando HTML, CSS, JavaScript y PHP. Participé en la implementación de funcionalidades interactivas para clientes de diversos sectores.",
+      "Desarrollo de sitios web estáticos y dinámicos usando HTML, CSS, JavaScript. Participé en la implementación de funcionalidades interactivas para clientes de diversos sectores.",
+    summary:
+      "Desarrollé sitios web, implementando funcionalidades interactivas para diversos clientes.",
   },
   {
     date: "Feb 2019 - Jun 2020",
@@ -30,5 +35,7 @@ export const experiences: Experience[] = [
     companyUbi: "Cuenca, Ecuador",
     description:
       "Realicé prácticas en el departamento de desarrollo de software, ayudando en la creación de pequeños proyectos internos y optimización de procesos mediante la automatización.",
+    summary:
+      "Prácticas en desarrollo de software, colaborando en proyectos internos y optimizando procesos con automatización.",
   },
 ];

@@ -1,0 +1,64 @@
+<div class="fixed bottom-8 right-8 ss">
+  <button
+    class="size-12 md:size-10 bg-bluee-500 text-white rounded-full p-2 btn-scroll-top animate-move-to hover:bg-bluee-500/90 transition-all duration-300 place-content-center"
+    style="box-shadow: 0 5px 10px #00000090;"
+  >
+    <svg
+      class="w-full object-cover"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      ><path
+        d="M13.0001 7.82843V20H11.0001V7.82843L5.63614 13.1924L4.22192 11.7782L12.0001 4L19.7783 11.7782L18.3641 13.1924L13.0001 7.82843Z"
+      ></path></svg
+    >
+  </button>
+</div>
+<style>
+  .ss {
+    animation: show-up linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+    transition: all 300ms;
+  }
+  .animate-move-to {
+    animation: move-to cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite 750ms
+      alternate;
+  }
+
+  @keyframes show-up {
+    0% {
+      opacity: 0;
+      display: none;
+    }
+    50% {
+      display: none;
+      scale: 1.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes move-to {
+    100% {
+      transform: translateY(-0.5rem);
+    }
+  }
+</style>
+<script>
+  function scrollToTop() {
+    const $btnScroll = document.querySelector(
+      ".btn-scroll-top"
+    ) as HTMLButtonElement;
+    $btnScroll.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    });
+  }
+
+  scrollToTop();
+  document.addEventListener("astro:after-swap", () => {
+    scrollToTop();
+  });
+</script>

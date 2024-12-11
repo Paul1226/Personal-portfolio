@@ -7,12 +7,12 @@ const { title } = Astro.props;
 // components
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ScrolToTop from "../assets/buttons/ScrolToTop.astro";
+import ScrollToTop from "../assets/buttons/ScrollToTop.astro";
 
 // fonts
 // 300-900
 import "@fontsource-variable/red-hat-display";
-import ClientRouter from "astro/components/ClientRouter.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -31,7 +31,7 @@ import ClientRouter from "astro/components/ClientRouter.astro";
       <slot />
     </main>
     <Footer />
-    <ScrolToTop client:load />
+    <ScrollToTop />
   </body>
 </html>
 

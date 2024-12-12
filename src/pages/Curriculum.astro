@@ -4,22 +4,34 @@ import Experience from "../components/curriculum/Experience.astro";
 import TitlePage from "../assets/TitlePage.astro";
 import Btn from "../assets/buttons/ButtonsPage.astro";
 import Studies from "../components/curriculum/Studies.astro";
+import Cv from "../icons/Cv.astro";
+import StudiesIcon from "../icons/StudiesIcon.astro";
+import ExperienceIcon from "../icons/ExperienceIcon.astro";
 ---
 
 <Layout title="Paul Dev - Curriculum">
-  <section class="w-full bg-gold-50 py-8">
+  <section
+    class="w-full bg-gold-50 py-8"
+    style="background-image:url(/textures/wood-pattern.png)"
+  >
     <main class="w-11/12 mx-auto max-w-6xl flex flex-col gap-8">
-      <TitlePage text="Curriculum" />
+      <TitlePage text="Curriculum">
+        <Cv slot="icon-title" />
+      </TitlePage>
       <div class="flex flex-col gap-3">
         <div class="flex items-center justify-between">
-          <h3 class="text-2xl font-bold">Experiencia</h3>
+          <h3 class="text-2xl font-bold flex items-center gap-3">
+            Experiencia <ExperienceIcon />
+          </h3>
           <Btn href="#" text="Descargar CV" isPrincipal />
         </div>
         <Experience />
       </div>
 
       <div class="flex flex-col gap-3">
-        <h3 class="text-2xl font-bold">Estudios</h3>
+        <h3 class="text-2xl font-bold flex items-center gap-3">
+          Estudios <StudiesIcon />
+        </h3>
         <Studies />
       </div>
     </main>

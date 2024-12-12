@@ -2,12 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import TitlePage from "../assets/TitlePage.astro";
 import CardAbout from "../components/about/CardAbout.astro";
+import AboutMe from "../icons/AboutMe.astro";
 ---
 
 <Layout title="Paul Dev - About me">
-  <section class="w-full bg-gold-50 py-8">
+  <section
+    class="w-full bg-gold-50 py-8"
+    style="background-image:url(/textures/wood-pattern.png)"
+  >
     <main class="w-11/12 mx-auto max-w-5xl flex flex-col gap-8">
-      <TitlePage text="Sobre Mí" />
+      <TitlePage text="Sobre Mí">
+        <AboutMe slot={"icon-title"} />
+      </TitlePage>
       <div class="content-clips">
         <CardAbout gridArea="[grid-area:quien-soy]" question="¿Quién soy?">
           <p>

@@ -2,13 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import TitlePage from "../assets/TitlePage.astro";
 import SecProjects from "../components/projects/SecProjects.astro";
+import Briefcase from "../icons/Briefcase.astro";
 ---
 
 <Layout title="Paul Dev - Projects">
-  <section class="w-full bg-gold-50 py-8">
+  <section
+    class="w-full bg-gold-50 py-8"
+    style="background-image:url(/textures/wood-pattern.png)"
+  >
     <main class="w-11/12 mx-auto max-w-6xl flex flex-col gap-8">
       <article class="w-full">
-        <TitlePage text="Proyectos" />
+        <TitlePage text="Proyectos">
+          <Briefcase slot="icon-title" />
+        </TitlePage>
         <p class="w-full max-w-xl mx-auto pt-4">
           Como desarrollador web, me especializo en crear interfaces atractivas
           y funcionales con un enfoque en el frontend utilizando tecnologías

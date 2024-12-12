@@ -4,6 +4,7 @@ import SectionCardIndex from "../assets/SectionCardIndex.astro";
 import ButtonsPage from "../assets/buttons/ButtonsPage.astro";
 import CardExpIndex from "./curriculum/CardExpIndex.astro";
 import { experiences } from "../data/Experience";
+import Cv from "../icons/Cv.astro";
 const exp = experiences.slice(0, 2);
 ---
 
@@ -12,7 +13,9 @@ const exp = experiences.slice(0, 2);
 
   <!-- header -->
   <article class="[grid-area:header] w-full" slot={"content-into-card"}>
-    <TitlePage text="curriculum" />
+    <TitlePage text="curriculum">
+      <Cv slot={"icon-title"} />
+    </TitlePage>
     <p class="pt-4">
       Mi formación académica está enfoca en el desarrollo web, con énfasis en
       frontend y aprendizaje de backend, complementada con proyectos prácticos.

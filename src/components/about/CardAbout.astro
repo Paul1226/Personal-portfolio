@@ -6,7 +6,12 @@ interface Props {
 const { gridArea, question } = Astro.props;
 ---
 
-<article class:list={[gridArea, "bg-white p-3 rounded-lg shadow-xl"]}>
+<article
+  class:list={[
+    gridArea,
+    "p-3 rounded-lg shadow-lg backdrop-blur-sm bg-white/30",
+  ]}
+>
   <h4 class="font-bold">{question}</h4>
   <div class="descript text-sm text-gray-800">
     <slot />

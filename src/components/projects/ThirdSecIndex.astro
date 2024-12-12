@@ -4,6 +4,7 @@ import SectionCardIndex from "../../assets/SectionCardIndex.astro";
 import ButtonsPage from "../../assets/buttons/ButtonsPage.astro";
 import CardExpIndex from "../curriculum/CardExpIndex.astro";
 import { projects } from "../../data/Projects";
+import Briefcase from "../../icons/Briefcase.astro";
 const exp = projects.slice(0, 2);
 ---
 
@@ -12,12 +13,13 @@ const exp = projects.slice(0, 2);
 
   <!-- header -->
   <article class="[grid-area:header] w-full" slot={"content-into-card"}>
-    <TitlePage text="proyectos" />
+    <TitlePage text="proyectos">
+      <Briefcase slot={"icon-title"} />
+    </TitlePage>
     <p class="pt-4">
-      Desarrollador web especializado en frontend, creando interfaces atractivas
-      y funcionales. Actualmente, estoy ampliando mis habilidades al explorar e
-      implementar conceptos de backend para desarrollar aplicaciones más
-      completas.
+      Desarrollador web especializado en frontend. Actualmente, estoy ampliando
+      mis habilidades al explorar e implementar conceptos de backend para
+      desarrollar aplicaciones más completas.
     </p>
   </article>
 

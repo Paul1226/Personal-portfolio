@@ -1,70 +1,60 @@
 ---
-import TitlePage from "../assets/TitlePage.astro";
 import SectionCardIndex from "../assets/SectionCardIndex.astro";
-import ButtonsPage from "../assets/buttons/ButtonsPage.astro";
-import CardExpIndex from "./curriculum/CardExpIndex.astro";
+import Card from "./curriculum/SummaryCard.astro";
 import { experiences } from "../data/Experience";
 import Cv from "../icons/Cv.astro";
 const exp = experiences.slice(0, 2);
+
+import HeaderArticle from "./HeaderArticle.astro";
+import MainArticle from "./MainArticle.astro";
 ---
 
 <SectionCardIndex>
   <!-- section of curriculum -->
 
   <!-- header -->
-  <article class="[grid-area:header] w-full" slot={"content-into-card"}>
-    <TitlePage text="curriculum">
-      <Cv slot={"icon-title"} />
-    </TitlePage>
-    <p class="pt-4">
-      Mi formación académica está enfoca en el desarrollo web, con énfasis en
-      frontend y aprendizaje de backend, complementada con proyectos prácticos.
-    </p>
-  </article>
-
-  <!-- main -->
-  <article
-    class="[grid-area:main] hidden md:block w-11/12 mx-auto"
+  <HeaderArticle
+    title="curriculum"
+    nameArea="[grid-area:header]"
     slot={"content-into-card"}
   >
-    <div class="ss">
-      {
-        exp.map(({ position, companyName, date, summary }) => (
-          <CardExpIndex
-            position={position}
-            companyName={companyName}
-            date={date}
-            summary={summary}
-          />
-        ))
-      }
-    </div>
+    <Cv slot={"icon-title"} />
+    Mi formación académica está enfoca en el desarrollo web, con énfasis en frontend
+    y aprendizaje de backend, complementada con proyectos prácticos.
+  </HeaderArticle>
 
-    <div class="flex justify-center">
-      <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
-    </div>
-  </article>
+  <!-- main -->
+  <MainArticle
+    hredBtn="/Curriculum/"
+    className="[grid-area:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    {
+      exp.map(({ position, companyName, date, summary }) => (
+        <Card
+          position={position}
+          companyName={companyName}
+          dates={date}
+          summary={summary}
+        />
+      ))
+    }
+  </MainArticle>
 
   <!-- footer -->
 
   <!-- out card-mobile -->
-  <article class="" slot={"content-out-card"}>
-    <div class="ss">
-      {
-        exp.map(({ position, companyName, date, summary }) => (
-          <CardExpIndex
-            position={position}
-            companyName={companyName}
-            date={date}
-            summary={summary}
-            inGreen
-          />
-        ))
-      }
-    </div>
-
-    <div class="flex justify-center">
-      <ButtonsPage href="/Curriculum/" text="ver más" isPrincipal />
-    </div>
-  </article>
+  <MainArticle hredBtn="/Curriculum/" slot={"content-out-card"}>
+    {
+      exp.map(({ position, companyName, date, summary }) => (
+        <Card
+          position={position}
+          companyName={companyName}
+          dates={date}
+          summary={summary}
+          inGreen
+        />
+      ))
+    }
+  </MainArticle>
 </SectionCardIndex>

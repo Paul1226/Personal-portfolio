@@ -1,39 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Experience from "../components/curriculum/Experience.astro";
-import TitlePage from "../assets/TitlePage.astro";
-import Btn from "../assets/buttons/ButtonsPage.astro";
-import Studies from "../components/curriculum/Studies.astro";
-import Cv from "../icons/Cv.astro";
+import CvIcon from "../icons/Cv.astro";
 import StudiesIcon from "../icons/StudiesIcon.astro";
 import ExperienceIcon from "../icons/ExperienceIcon.astro";
+
+import Section from "../components/SectionWrapper.astro";
+import HeaderPage from "../components/HeaderPage.astro";
+import SubContent from "../components/SubContent.astro";
+
+import { experiences } from "../data/Experience";
+import { education } from "../data/Studies";
+import DetailsCard from "../components/curriculum/DetailsCard.astro";
+
+const lisExperiences = experiences || [];
+const lisStudies = education || [];
 ---
 
 <Layout title="Paul Dev - Curriculum">
-  <section
-    class="w-full bg-gold-50 py-8"
-    style="background-image:url(/textures/wood-pattern.png)"
-  >
-    <main class="w-11/12 mx-auto max-w-6xl flex flex-col gap-8">
-      <TitlePage text="Curriculum">
-        <Cv slot="icon-title" />
-      </TitlePage>
-      <div class="flex flex-col gap-3">
-        <div class="flex items-center justify-between">
-          <h3 class="text-2xl font-bold flex items-center gap-3">
-            Experiencia <ExperienceIcon />
-          </h3>
-          <Btn href="#" text="Descargar CV" isPrincipal />
-        </div>
-        <Experience />
-      </div>
+  <Section>
+    <HeaderPage nameTitle="curriculum">
+      <CvIcon slot={"icon-in-title"} />
+    </HeaderPage>
 
-      <div class="flex flex-col gap-3">
-        <h3 class="text-2xl font-bold flex items-center gap-3">
-          Estudios <StudiesIcon />
-        </h3>
-        <Studies />
-      </div>
-    </main>
-  </section>
+    <!-- Experience -->
+    <SubContent subTitle="Experiencia" containBtn>
+      <ExperienceIcon slot={"icon-in-subTitle"} />
+      {
+        lisExperiences.map(
+          ({ date, companyName, companyUbi, description, position }) => (
+            <DetailsCard
+              dates={date}
+              title={position}
+              subTitle={companyName}
+              site={companyUbi}
+              details={description}
+            />
+          )
+        )
+      }
+    </SubContent>
+
+    <!-- Studies -->
+    <SubContent subTitle="Estudios">
+      <StudiesIcon slot={"icon-in-subTitle"} />
+      {
+        lisStudies.map(
+          ({ date, degree, description, institution, institutionUbi }) => (
+            <DetailsCard
+              dates={date}
+              title={degree}
+              subTitle={institution}
+              site={institutionUbi}
+              details={description}
+            />
+          )
+        )
+      }
+    </SubContent>
+  </Section>
 </Layout>

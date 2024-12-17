@@ -2,7 +2,9 @@
 import TitlePage from "../../assets/TitlePage.astro";
 import SectionCardIndex from "../../assets/SectionCardIndex.astro";
 import ButtonsPage from "../../assets/buttons/ButtonsPage.astro";
-import CardExpIndex from "../curriculum/CardExpIndex.astro";
+import Card from "../curriculum/SummaryCard.astro";
+import HeaderArticle from "../HeaderArticle.astro";
+import MainArticle from "../MainArticle.astro";
 import { projects } from "../../data/Projects";
 import Briefcase from "../../icons/Briefcase.astro";
 const exp = projects.slice(0, 2);
@@ -12,60 +14,34 @@ const exp = projects.slice(0, 2);
   <!-- section of curriculum -->
 
   <!-- header -->
-  <article class="[grid-area:header] w-full" slot={"content-into-card"}>
-    <TitlePage text="proyectos">
-      <Briefcase slot={"icon-title"} />
-    </TitlePage>
-    <p class="pt-4">
-      Desarrollador web especializado en frontend. Actualmente, estoy ampliando
-      mis habilidades al explorar e implementar conceptos de backend para
-      desarrollar aplicaciones más completas.
-    </p>
-  </article>
-
-  <!-- main -->
-  <article
-    class="[grid-area:main] hidden md:block w-11/12 mx-auto"
+  <HeaderArticle
+    title="proyectos"
+    nameArea="[grid-area:header]"
     slot={"content-into-card"}
   >
-    <div class="ss">
-      {
-        exp.map(({ summary, name }) => (
-          <CardExpIndex
-            position={name}
-            companyName={""}
-            date={""}
-            summary={summary}
-          />
-        ))
-      }
-    </div>
+    <Briefcase slot={"icon-title"} />
+    Desarrollador web especializado en frontend. Actualmente, estoy ampliando mis
+    habilidades al explorar e implementar conceptos de backend para desarrollar aplicaciones
+    más completas.
+  </HeaderArticle>
 
-    <div class="flex justify-center">
-      <ButtonsPage href="/Projects/" text="ver más" isPrincipal />
-    </div>
-  </article>
+  <!-- main -->
+  <MainArticle
+    hredBtn="/Projects/"
+    className="[grid-area:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    {exp.map(({ summary, name }) => <Card position={name} summary={summary} />)}
+  </MainArticle>
 
   <!-- footer -->
 
   <!-- out card-mobile -->
-  <article class="" slot={"content-out-card"}>
-    <div class="ss">
-      {
-        exp.map(({ summary, name }) => (
-          <CardExpIndex
-            position={name}
-            companyName={""}
-            date={""}
-            summary={summary}
-            inGreen
-          />
-        ))
-      }
-    </div>
-
-    <div class="flex justify-center">
-      <ButtonsPage href="/Projects/" text="ver más" isPrincipal />
-    </div>
-  </article>
+  <MainArticle hredBtn="/Projects/" slot={"content-out-card"}>
+    {
+      exp.map(({ summary, name }) => (
+        <Card position={name} summary={summary} inGreen />
+      ))
+    }
+  </MainArticle>
 </SectionCardIndex>

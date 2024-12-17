@@ -1,0 +1,16 @@
+---
+import TitlePage from "../assets/TitlePage.astro";
+
+interface Props {
+  nameTitle: string;
+  shortDetail?: string;
+}
+const { nameTitle, shortDetail } = Astro.props;
+---
+
+<header>
+  <TitlePage text={nameTitle}>
+    <slot name="icon-in-title" />
+  </TitlePage>
+  {shortDetail && <p class="w-full max-w-xl mx-auto pt-4">{shortDetail}</p>}
+</header>

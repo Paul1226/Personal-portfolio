@@ -1,0 +1,49 @@
+---
+interface Props {
+  position: string;
+  companyName?: string;
+  dates?: string;
+  summary: string;
+  inGreen?: boolean;
+}
+const { position, companyName, dates, summary, inGreen = false } = Astro.props;
+const textColor = inGreen ? "text-white" : "text-black";
+const textParagraph = inGreen ? "text-white" : "text-gray-800";
+const titleGreen = inGreen ? "text-gold-400" : "text-bluee-500";
+const bgGreen = inGreen ? "bg-gold-400" : "bg-bluee-500";
+---
+
+<div
+  class="relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+>
+  <div class="relative pb-5 md:col-span-2">
+    <div class="sticky top-0">
+      <span
+        class:list={[
+          "-left-[39px] top-2 absolute size-[10px] bg-bluee-500 rounded-sm",
+          bgGreen,
+        ]}></span>
+      <h3 class:list={["text-xl font-bold", titleGreen]}>{position}</h3>
+      {
+        companyName && (
+          <h4 class:list={["font-semibold text-xl", textColor]}>
+            {companyName}
+          </h4>
+        )
+      }
+      {
+        dates && (
+          <time class:list={["p-0 m-0 text-sm", textColor]}>{dates}</time>
+        )
+      }
+    </div>
+  </div>
+  <div
+    class:list={[
+      "relative flex flex-col gap-2 pb-4 md:col-span-3",
+      textParagraph,
+    ]}
+  >
+    {summary}
+  </div>
+</div>

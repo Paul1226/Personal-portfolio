@@ -1,0 +1,9 @@
+<section class="cards-wrapper grid gap-4">
+  <slot />
+</section>
+
+<style>
+  .cards-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+  }
+</style>

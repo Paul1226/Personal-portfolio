@@ -1,0 +1,18 @@
+---
+import ButtonsPage from "../assets/buttons/ButtonsPage.astro";
+interface Props {
+  className?: string;
+  hredBtn: string;
+}
+const { className, hredBtn } = Astro.props;
+---
+
+<article class:list={["", className]}>
+  <div class="content-list">
+    <slot />
+  </div>
+
+  <div class="flex justify-center">
+    <ButtonsPage href={hredBtn} text="ver más" isPrincipal />
+  </div>
+</article>

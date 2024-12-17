@@ -5,9 +5,10 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<h2
-  class="text-3xl w-full flex items-center justify-center gap-4 font-black capitalize"
->
-  <span class="block w-4 aspect-square bg-bluee-500 rounded-sm"></span>{text}
-  <slot name="icon-title" />
-</h2>
+<header class="flex items-center justify-center gap-3">
+  <div class="size-4 aspect-square bg-bluee-500 rounded-[4px]"></div>
+  <h2 class="text-3xl font-black capitalize">{text}</h2>
+  <figure class="h-8 aspect-square">
+    <slot />
+  </figure>
+</header>

@@ -4,12 +4,18 @@ import Twitter from "../icons/Twitter.astro";
 import Linkedin from "../icons/Linkedin.astro";
 import Instagram from "../icons/Instagram.astro";
 
+interface Props {
+  inFooter?: boolean;
+}
+
+const { inFooter = false } = Astro.props;
+const bgColor = inFooter ? "bg-lightscreen" : "bg-white";
 const classIcons = "w-6 h-auto";
 const classLinks =
-  "p-1 rounded-lg hover:bg-slate-300 transition-colors duration-300 grid place-content-center";
+  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center";
 ---
 
-<section class="bg-white py-1">
+<section class:list={["py-1", bgColor]}>
   <ul class="flex items-center gap-4 w-full justify-center">
     <li>
       <a class={classLinks} href="#"

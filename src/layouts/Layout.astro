@@ -25,9 +25,9 @@ import { ClientRouter } from "astro:transitions";
     <title>{title}</title>
     <ClientRouter />
   </head>
-  <body class="relative -z-50">
-    <Header />
+  <body class="relative -z-50 bg-lightscreen">
     <main>
+      <Header />
       <slot />
     </main>
     <Footer />
@@ -36,6 +36,15 @@ import { ClientRouter } from "astro:transitions";
 </html>
 
 <style is:global>
+  :root {
+    /* variables */
+    --primary: #166534;
+    --secondary: #feffbe;
+    --terciary: #cc2936;
+    --cuaternary: #0050ff;
+    --lightsreen: #f8fafc;
+    --darksreen: #2f3037;
+  }
   * {
     padding: 0;
     margin: 0;

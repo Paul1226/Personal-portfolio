@@ -3,6 +3,7 @@ import Facebook from "../icons/Facebook.astro";
 import Twitter from "../icons/Twitter.astro";
 import Linkedin from "../icons/Linkedin.astro";
 import Instagram from "../icons/Instagram.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
 
 const classIcons = "w-6 h-auto";
 const classLinks =
@@ -10,8 +11,8 @@ const classLinks =
 ---
 
 <section class="bg-white py-1">
-  <ul class="flex items-center gap-4 w-full justify-center">
-    <li>
+  <ul class="flex items-center gap-3 w-full justify-center">
+    <!-- <li>
       <a class={classLinks} href="#"
         ><Facebook class:list={["", classIcons]} /></a
       >
@@ -20,15 +21,22 @@ const classLinks =
       <a class={classLinks} href="#"
         ><Twitter class:list={["", classIcons]} /></a
       >
-    </li>
+    </li> -->
     <li>
-      <a class={classLinks} href="#"
-        ><Linkedin class:list={["", classIcons]} /></a
+      <a
+        class={classLinks}
+        href="https://www.linkedin.com/in/paul-guachichullca-2287602b1/"
+        target="_blank"><Linkedin class:list={["", classIcons]} /></a
       >
     </li>
-    <li>
+    <!-- <li>
       <a class={classLinks} href="#"
         ><Instagram class:list={["", classIcons]} /></a
+      >
+    </li> -->
+    <li>
+      <a class={classLinks} href="https://github.com/Paul1226" target="_blank"
+        ><GitHubIcon class:list={["", classIcons]} /></a
       >
     </li>
   </ul>

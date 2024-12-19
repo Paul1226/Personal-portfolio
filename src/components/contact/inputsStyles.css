@@ -1,0 +1,27 @@
+.inputGroup {
+  --soft-purple: #9696c8;
+}
+.inputGroup :is(input:focus, input:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: white;
+  border-radius: 1rem;
+  color: var(--soft-purple);
+}
+.inputGroup :is(input:focus, input:valid) {
+  border-color: var(--soft-purple);
+}
+.inputGroup :is(textarea:focus, textarea:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: white;
+  border-radius: 1rem;
+  color: var(--soft-purple);
+}
+.inputGroup :is(textarea:focus, textarea:valid) {
+  border-color: var(--soft-purple);
+}

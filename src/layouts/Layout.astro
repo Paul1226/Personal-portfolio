@@ -1,8 +1,9 @@
 ---
 interface Props {
   title: string;
+  principal?: boolean;
 }
-const { title } = Astro.props;
+const { title, principal = true } = Astro.props;
 
 // components
 import Header from "../components/Header.astro";
@@ -27,7 +28,7 @@ import { ClientRouter } from "astro:transitions";
   </head>
   <body class="relative -z-50 bg-lightscreen">
     <main>
-      <Header />
+      {principal && <Header />}
       <slot />
     </main>
     <Footer />

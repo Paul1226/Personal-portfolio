@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionCardIndex from "../assets/SectionCardIndex.astro";
+import CoverImage from "../components/CoverImage.astro";
+import SocialNetworks from "../components/SocialNetworks.astro";
+import InfoDescript404 from "../components/InfoDescript404.astro";
+---
+
+<Layout title="Paul Dev | 404 Not Found" principal={false}>
+  <SectionCardIndex>
+    <CoverImage slot={"content-into-card"} />
+    <div
+      class="hidden md:block w-full [grid-area:main]"
+      slot={"content-into-card"}
+    >
+      <InfoDescript404 />
+    </div>
+    <SocialNetworks slot={"content-into-card"} />
+
+    <div class="" slot={"content-out-card"}>
+      <InfoDescript404 inGreen />
+    </div>
+  </SectionCardIndex>
+</Layout>

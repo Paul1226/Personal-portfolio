@@ -3,7 +3,7 @@ import Cross from "../icons/Cross.astro";
 import Menu from "../icons/Menu.astro";
 const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
-  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-bluee-500";
+  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-terciary";
 ---
 
 <header class="w-full md:sticky md:top-0 md:left-0 md:z-10">
@@ -13,7 +13,7 @@ const classLink =
     <div class="logo">
       <a href="/" class="flex flex-col md:flex-row md:items-end relative z-20">
         <div class="flex items-center gap-2">
-          <span class="block bg-green-800 w-4 h-4 rounded-sm"></span>
+          <span class="block bg-primary w-4 h-4 rounded-sm"></span>
           <span class="font-black text-3xl">Paul Dev</span>
         </div>
         <span class="uppercase tracking-wide">/ Frontend developer</span>
@@ -30,7 +30,7 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 z-10 h-full bg-gold-100/50 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 z-10 h-full bg-secondary/90 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
         <li>
@@ -39,7 +39,7 @@ const classLink =
               [classLink]: true,
               active: currentPath === "/About/",
             }}
-            href="/About">sobre&nbsp;mí</a
+            href="/About/">sobre&nbsp;mí</a
           >
         </li>
         <li>
@@ -48,7 +48,7 @@ const classLink =
               [classLink]: true,
               active: currentPath === "/Curriculum/",
             }}
-            href="/Curriculum">currículum</a
+            href="/Curriculum/">currículum</a
           >
         </li>
         <li>
@@ -57,7 +57,7 @@ const classLink =
               [classLink]: true,
               active: currentPath === "/Projects/",
             }}
-            href="/Projects">proyectos</a
+            href="/Projects/">proyectos</a
           >
         </li>
         <li>
@@ -66,7 +66,7 @@ const classLink =
               [classLink]: true,
               active: currentPath === "/Contact/",
             }}
-            href="/Contact">contacto</a
+            href="/Contact/">contacto</a
           >
         </li>
       </ul>
@@ -89,6 +89,7 @@ const classLink =
     transform: var(--scale);
     position: relative;
     z-index: 20;
+    transition: transform 300ms;
   }
   .btn-cross {
     transform: var(--no-scale);
@@ -100,7 +101,7 @@ const classLink =
   }
 
   .nav-list li a.active {
-    color: #0050ff;
+    color: var(--terciary);
   }
 
   .nav-container:has(.nav-list:target) {

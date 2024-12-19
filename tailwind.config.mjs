@@ -44,10 +44,15 @@ export default {
           900: "#593d35",
           950: "#2f1e1b",
         },
-
         bluee: {
           500: "#0050FF",
         },
+        primary: "#166534",
+        secondary: "#feffbe",
+        terciary: "#cc2936",
+        cuaternary: "#0050FF",
+        lightscreen: "#f8fafc",
+        darkscreen: "#2f3037",
       },
     },
   },

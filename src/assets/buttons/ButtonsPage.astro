@@ -19,11 +19,17 @@ const classLink =
       class:list={["bg-terciary border-terciary text-white", classLink]}
       href={href}
       target={target}
+      rel="noreferrer"
     >
       {text}
     </a>
   ) : (
-    <a class:list={[classLink, "border-black"]} href={href} target={target}>
+    <a
+      class:list={[classLink, "border-black"]}
+      href={href}
+      target={target}
+      rel="noreferrer"
+    >
       {text}
     </a>
   )

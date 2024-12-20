@@ -10,7 +10,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Página de Películas",
+    name: "Movies TMDB",
     description:
       "Un sitio web interactivo donde los usuarios pueden buscar información sobre películas, ver detalles como la sinopsis, el elenco y las calificaciones. Integra una API para datos dinámicos y permite explorar contenido actualizado.",
     technologies: ["Astro", "TypeScript", "Css", "API REST"],
@@ -32,7 +32,7 @@ export const projects: Project[] = [
       "Portafolio personal moderno, responsivo y personalizable, con diseño limpio y estructura fácil de modificar.",
   },
   {
-    name: "Proyectos de ConquerBlocks",
+    name: "Proyectos ConquerBlocks",
     description:
       "Una página centralizada donde se recopilan todos los proyectos desarrollados durante mi formación en la academia ConquerBlocks, con enlaces directos y descripciones de cada uno.",
     technologies: ["Astro", "Tailwind", "TypeScript"],
@@ -43,7 +43,7 @@ export const projects: Project[] = [
       "Página centralizada con todos los proyectos de mi formación en ConquerBlocks, incluyendo enlaces y descripciones.",
   },
   {
-    name: "Simulador de Compras",
+    name: "Course Store",
     description:
       "Una aplicación que simula el proceso de compra en línea, permitiendo agregar productos al carrito, calcular subtotales y totales. Ideal para practicar lógica de negocio y manejo de datos dinámicos.",
     technologies: ["Astro", "JavaScript"],

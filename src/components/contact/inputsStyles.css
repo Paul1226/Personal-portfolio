@@ -6,7 +6,7 @@
   margin: 0em;
   margin-left: 1.3em;
   padding: 0.4em;
-  background-color: white;
+  background-color: var(--lightsreen);
   border-radius: 1rem;
   color: var(--soft-purple);
 }
@@ -18,7 +18,7 @@
   margin: 0em;
   margin-left: 1.3em;
   padding: 0.4em;
-  background-color: white;
+  background-color: var(--lightsreen);
   border-radius: 1rem;
   color: var(--soft-purple);
 }

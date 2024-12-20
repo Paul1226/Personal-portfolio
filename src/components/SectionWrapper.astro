@@ -1,14 +1,14 @@
 ---
 interface Props {
-  inAbout?: boolean;
+  inContact?: boolean;
 }
-const { inAbout = false } = Astro.props;
-const maxWidth = inAbout ? "max-w-5xl" : "max-w-6xl";
+const { inContact = false } = Astro.props;
+const maxWidth = inContact ? "max-w-4xl" : "max-w-6xl";
 ---
 
 <section
-  class="w-full bg-pearl-50 py-8"
-  style="background-image:url(/textures/wood-pattern.png)"
+  class="w-full bg-gold-50 py-8"
+  style="background-image:url(/textures/white-diamond.png)"
 >
   <main class:list={["w-11/12 mx-auto flex flex-col gap-8", maxWidth]}>
     <slot />

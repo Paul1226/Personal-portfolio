@@ -1,0 +1,36 @@
+---
+import Linkedin from "@hero/icons/Linkedin.astro";
+import GitHubIcon from "@hero/icons/GitHubIcon.astro";
+
+interface Props {
+  inFooter?: boolean;
+}
+
+const { inFooter = false } = Astro.props;
+const bgColor = inFooter ? "bg-lightscreen" : "bg-white";
+const classLinks =
+  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center";
+---
+
+<section class:list={["py-1 h-max", bgColor]}>
+  <ul class="flex items-center gap-4 w-full justify-center">
+    <li>
+      <a
+        class={classLinks}
+        href="https://www.linkedin.com/in/paul-guachichullca-2287602b1/"
+        target="_blank"><Linkedin /></a
+      >
+    </li>
+    <li>
+      <a class={classLinks} href="https://github.com/Paul1226" target="_blank"
+        ><GitHubIcon /></a
+      >
+    </li>
+  </ul>
+</section>
+
+<style>
+  section {
+    grid-area: footer;
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import { skills } from "@data/Skills";
+
+const skillsPrim = skills.slice(0, 6);
+const skillsSec = skills.slice(6, 12);
+---
+
+<section class="w-full max-w-5xl mx-auto">
+  <div class="overflow-hidden relative">
+    <div class="bg-gradiente-slider w-full h-full absolute inset-0 z-10"></div>
+    <ul class="flex items-center gap-6 animate-slider py-4 w-max">
+      {
+        skillsPrim.map((skill) => (
+          <li>
+            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md min-w-40 w-full">
+              <img
+                class="w-full max-w-10"
+                src={skill.image}
+                alt={`icono de ${skill.name}`}
+              />
+              <figcaption class="text-[#999999] font-semibold">
+                {skill.name}
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+      {
+        skillsPrim.map((skill) => (
+          <li>
+            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md min-w-40 w-full">
+              <img
+                class="w-full max-w-10"
+                src={skill.image}
+                alt={`icono de ${skill.name}`}
+              />
+              <figcaption class="text-[#999999] font-semibold">
+                {skill.name}
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="flex items-center gap-6 animate-slider-reverse py-4 w-max">
+      {
+        skillsSec.map((skill) => (
+          <li>
+            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md w-full min-w-40">
+              <img
+                class="w-full max-w-10"
+                src={skill.image}
+                alt={`icono de ${skill.name}`}
+              />
+              <figcaption class="text-[#999999] font-semibold">
+                {skill.name}
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+      {
+        skillsSec.map((skill) => (
+          <li>
+            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md w-full min-w-40">
+              <img
+                class="w-full max-w-10"
+                src={skill.image}
+                alt={`icono de ${skill.name}`}
+              />
+              <figcaption class="text-[#999999] font-semibold">
+                {skill.name}
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+<style>
+  .bg-gradiente-slider {
+    background: linear-gradient(
+      90deg,
+      #f8fafc 3%,
+      #f8fafc10 15%,
+      #f8fafc10 85%,
+      #f8fafc 97%
+    );
+    /* background: linear-gradient(90deg, #f00, #0f0); */
+  }
+  .animate-slider {
+    animation: slider 20s infinite linear;
+  }
+  .animate-slider-reverse {
+    animation: slider 20s infinite linear reverse;
+  }
+  @keyframes slider {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

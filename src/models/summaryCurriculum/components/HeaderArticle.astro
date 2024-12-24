@@ -1,0 +1,17 @@
+---
+import TitlePage from "@shared/TitlePage.astro";
+interface Props {
+  title: string;
+  nameArea: string;
+}
+const { title, nameArea } = Astro.props;
+---
+
+<article class:list={["w-full", nameArea]}>
+  <TitlePage text={title}>
+    <slot name="icon-title" />
+  </TitlePage>
+  <p class="pt-4">
+    <slot />
+  </p>
+</article>

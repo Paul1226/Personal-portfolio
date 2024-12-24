@@ -1,0 +1,59 @@
+---
+import ContentWrapperCard from "@shared/ContentWrapperCard.astro";
+import SummaryCard from "./components/SummaryCard.astro";
+import { experiences } from "@data/experience";
+import CvIcon from "@summaryCurriculum/icons/Cv.astro";
+import HeaderArticle from "./components/HeaderArticle.astro";
+import MainArticle from "./components/MainArticle.astro";
+const exp = experiences.slice(0, 2);
+---
+
+<ContentWrapperCard>
+  <!-- section of curriculum -->
+
+  <!-- header -->
+  <HeaderArticle
+    title="curriculum"
+    nameArea="[grid-area:header]"
+    slot={"content-into-card"}
+  >
+    <CvIcon slot={"icon-title"} />
+    Mi formación académica está enfoca en el desarrollo web, con énfasis en frontend
+    y aprendizaje de backend, complementada con proyectos prácticos.
+  </HeaderArticle>
+
+  <!-- main -->
+  <MainArticle
+    hredBtn="/Curriculum/"
+    className="[grid-area:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    {
+      exp.map(({ position, companyName, date, summary }) => (
+        <SummaryCard
+          position={position}
+          companyName={companyName}
+          dates={date}
+          summary={summary}
+        />
+      ))
+    }
+  </MainArticle>
+
+  <!-- footer -->
+
+  <!-- out card-mobile -->
+  <MainArticle hredBtn="/Curriculum/" slot={"content-out-card"}>
+    {
+      exp.map(({ position, companyName, date, summary }) => (
+        <SummaryCard
+          position={position}
+          companyName={companyName}
+          dates={date}
+          summary={summary}
+          inGreen
+        />
+      ))
+    }
+  </MainArticle>
+</ContentWrapperCard>

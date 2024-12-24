@@ -1,0 +1,61 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import HeaderPage from "@components/HeaderPage.astro";
+import CvIcon from "@summaryCurriculum/icons/Cv.astro";
+
+import { experiences } from "@data/experience";
+import { education } from "@data/Studies";
+
+import SubContent from "@components/SubContent.astro";
+import DetailsCard from "./components/DetailsCard.astro";
+import ExperienceIcon from "./icons/ExperienceIcon.astro";
+import StudiesIcon from "./icons/StudiesIcon.astro";
+import SectionWrapper from "@components/SectionWrapper.astro";
+
+const lisExperiences = experiences || [];
+const lisStudies = education || [];
+---
+
+<Layout title="Paul Dev - Curriculum">
+  <SectionWrapper>
+    <HeaderPage nameTitle="curriculum">
+      <CvIcon slot={"icon-in-title"} />
+    </HeaderPage>
+
+    <!-- Experience -->
+    <SubContent subTitle="Experiencia" containBtn>
+      <ExperienceIcon slot={"icon-in-subTitle"} />
+      {
+        lisExperiences.map(
+          ({ date, companyName, companyUbi, description, position }) => (
+            <DetailsCard
+              dates={date}
+              title={position}
+              subTitle={companyName}
+              site={companyUbi}
+              details={description}
+            />
+          )
+        )
+      }
+    </SubContent>
+
+    <!-- Studies -->
+    <SubContent subTitle="Estudios">
+      <StudiesIcon slot={"icon-in-subTitle"} />
+      {
+        lisStudies.map(
+          ({ date, degree, description, institution, institutionUbi }) => (
+            <DetailsCard
+              dates={date}
+              title={degree}
+              subTitle={institution}
+              site={institutionUbi}
+              details={description}
+            />
+          )
+        )
+      }
+    </SubContent>
+  </SectionWrapper>
+</Layout>

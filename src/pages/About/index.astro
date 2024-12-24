@@ -1,0 +1,107 @@
+---
+import HeaderPage from "@components/HeaderPage.astro";
+import Layout from "src/layouts/Layout.astro";
+import CardAbout from "./components/CardAbout.astro";
+import AboutMe from "./icons/AboutMe.astro";
+import SectionWrapper from "@components/SectionWrapper.astro";
+---
+
+<Layout title="Paul Dev - About me">
+  <SectionWrapper inAbout>
+    <HeaderPage nameTitle="Sobre Mí">
+      <AboutMe slot={"icon-in-title"} />
+    </HeaderPage>
+    <div class="content-clips">
+      <CardAbout gridArea="[grid-area:quien-soy]" question="¿Quién soy?">
+        <p>
+          Soy una persona <strong>comprometida, responsable y apasionada</strong
+          > por mi trabajo. Creo que la dedicación y el esfuerzo son clave para alcanzar
+          cualquier meta, y esa filosofía guía tanto mi vida como mi carrera profesional.
+        </p>
+      </CardAbout>
+
+      <article
+        class="[grid-area:img-content] grid place-content-center shadow-xl"
+      >
+        <figure class="w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
+          <img
+            class="w-full aspect-square object-cover"
+            src="/images/paul-dev-4.webp"
+            alt="Imagen de perfil de Paul Dev en la seccion de About"
+            loading="lazy"
+          />
+        </figure>
+      </article>
+
+      <CardAbout gridArea="[grid-area:como-empece]" question="¿Cómo empecé?">
+        <p>
+          Mis primeros pasos fueron en áreas no relacionadas con la
+          programación, como la fabricación y <strong>diseño</strong> de mobiliarios.
+          Estas experiencias me ayudaron a desarrollar habilidades como la perseverancia,
+          la creatividad para <strong>resolver problemas</strong> y el <strong
+            >trabajo en equipo</strong
+          >, que luego serían fundamentales en mi transición al desarrollo web.
+        </p>
+      </CardAbout>
+
+      <CardAbout
+        gridArea="[grid-area:mi-interes]"
+        question="¿Cómo me interesé por la programación?"
+      >
+        <p>
+          Mientras estudiaba <strong>máquinas CNC</strong> y diseño digital, descubrí
+          cómo la tecnología puede convertir ideas en proyectos reales. Este descubrimiento
+          despertó mi curiosidad y me llevó a especializarme en desarrollo web, aprendiendo
+          en academias como <a
+            class="text-blue-600"
+            href="https://www.conquerx.com/"
+            target="_blank"><strong>ConquerBlocks</strong></a
+          > y participando en proyectos que combinan diseño y funcionalidad.
+        </p>
+      </CardAbout>
+
+      <CardAbout
+        gridArea="[grid-area:que-hago]"
+        question="¿Qué hago actualmente?"
+      >
+        <p>
+          Me dedico a crear soluciones digitales enfocadas en el frontend,
+          utilizando tecnologías como HTML, CSS y JavaScript, frameworks como
+          <strong>Astro</strong> o librerías como <strong>React</strong>.
+          También estoy ampliando mis habilidades en backend para desarrollar
+          aplicaciones más completas y dinámicas.
+        </p>
+      </CardAbout>
+
+      <CardAbout
+        gridArea="[grid-area:mi-objetivo]"
+        question="¿Cuál es mi objetivo?"
+      >
+        <p>
+          Seguir creciendo como desarrollador, enfrentar <strong
+            >nuevos desafíos</strong
+          > y aportar valor en cada proyecto que emprendo. Estoy convencido de que
+          cada experiencia en mi trayectoria me ha preparado para afrontar el futuro
+          con pasión y compromiso.
+        </p>
+      </CardAbout>
+    </div>
+  </SectionWrapper>
+</Layout>
+
+<style>
+  .content-clips {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "quien-soy" "img-content" "como-empece" "mi-interes" "que-hago" "mi-objetivo";
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .content-clips {
+      /* grid-template-columns: repeat(2, 1fr); */
+      grid-template-columns: 2fr 1.75fr;
+      grid-template-areas: "quien-soy img-content" "como-empece img-content" "mi-interes img-content" "que-hago mi-objetivo";
+    }
+  }
+</style>

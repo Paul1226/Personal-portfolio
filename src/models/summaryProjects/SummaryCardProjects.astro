@@ -1,0 +1,49 @@
+---
+import ContentWrapperCard from "@shared/ContentWrapperCard.astro";
+import { projects } from "../../data/Projects";
+import HeaderArticle from "@summaryCurriculum/components/HeaderArticle.astro";
+import MainArticle from "@summaryCurriculum/components/MainArticle.astro";
+import Briefcase from "./icons/Briefcase.astro";
+import SummaryCard from "@summaryCurriculum/components/SummaryCard.astro";
+const exp = projects.slice(0, 2);
+---
+
+<ContentWrapperCard>
+  <!-- section of curriculum -->
+
+  <!-- header -->
+  <HeaderArticle
+    title="proyectos"
+    nameArea="[grid-area:header]"
+    slot={"content-into-card"}
+  >
+    <Briefcase slot={"icon-title"} />
+    Desarrollador web especializado en frontend. Actualmente, estoy ampliando mis
+    habilidades al explorar e implementar conceptos de backend para desarrollar aplicaciones
+    más completas.
+  </HeaderArticle>
+
+  <!-- main -->
+  <MainArticle
+    hredBtn="/Projects/"
+    className="[grid-area:main] hidden md:block w-11/12 mx-auto"
+    slot={"content-into-card"}
+  >
+    {
+      exp.map(({ summary, name }) => (
+        <SummaryCard position={name} summary={summary} />
+      ))
+    }
+  </MainArticle>
+
+  <!-- footer -->
+
+  <!-- out card-mobile -->
+  <MainArticle hredBtn="/Projects/" slot={"content-out-card"}>
+    {
+      exp.map(({ summary, name }) => (
+        <SummaryCard position={name} summary={summary} inGreen />
+      ))
+    }
+  </MainArticle>
+</ContentWrapperCard>

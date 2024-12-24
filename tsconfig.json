@@ -1,5 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@header/*": ["src/models/header/*"],
+      "@hero/*": ["src/models/hero/*"],
+      "@summaryProjects/*": ["src/models/summaryProjects/*"],
+      "@summaryCurriculum/*": ["src/models/summaryCurriculum/*"],
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@shared/*": ["src/shared/*"],
+      "@pgabout/*": ["src/pages/About/*"]
+    }
+  }
 }

@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FirstSecIndex from "../components/FirstSecIndex.astro";
-import SecondSecIndex from "../components/SecondSecIndex.astro";
-import ThirdSecIndex from "../components/projects/ThirdSecIndex.astro";
+import Hero from "@hero/Hero.astro";
+import SummaryCardCurriculum from "@summaryCurriculum/SummaryCardCurriculum.astro";
+import SummaryCardProjects from "@summaryProjects/SummaryCardProjects.astro";
 ---
 
 <Layout title="Paul Dev - Personal portfolio">
-  <FirstSecIndex />
-  <SecondSecIndex />
-  <ThirdSecIndex />
+  <Hero />
+  <SummaryCardCurriculum />
+  <SummaryCardProjects />
 </Layout>

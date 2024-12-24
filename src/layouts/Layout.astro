@@ -6,13 +6,13 @@ interface Props {
 const { title, principal = true } = Astro.props;
 
 // components
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ScrollToTop from "../assets/buttons/ScrollToTop.astro";
+import Footer from "@shared/Footer.astro";
 
 // fonts
 // 300-900
 import "@fontsource-variable/red-hat-display";
+import Header from "@header/Header.astro";
+import ScrollToTop from "@shared/ScrollToTop.astro";
 import { ClientRouter } from "astro:transitions";
 ---
 

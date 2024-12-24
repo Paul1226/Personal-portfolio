@@ -1,0 +1,32 @@
+---
+import ElectricalPlugs from "../icons/ElectricalPlugs.astro";
+import ButtonsPage from "@shared/ButtonsPage.astro";
+
+interface Props {
+  inGreen?: boolean;
+}
+const { inGreen = false } = Astro.props;
+
+const textColor = inGreen ? "text-gold-50" : "text-black";
+---
+
+<div
+  class:list={["flex flex-col items-center justify-center gap-2", textColor]}
+>
+  <h4 class="font-black text-center text-4xl mb-2">Página no encontrada</h4>
+
+  <figure
+    class="w-full max-w-sm mx-auto h-max bg-lightscreen rounded-lg relative overflow-hidden"
+  >
+    <ElectricalPlugs />
+    <div
+      class="absolute inset-0"
+      style="background-image: linear-gradient(90deg, white 10%, #ffffff10 20%, #ffffff10 80%, white 90%);"
+    >
+    </div>
+  </figure>
+  <h4 class="font-black text-center text-4xl">404</h4>
+
+  <p>¡Oops! No hemos podido encontrar la página que buscas.</p>
+  <ButtonsPage href="/" text="Go Home" isPrincipal />
+</div>

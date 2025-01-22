@@ -30,7 +30,7 @@ import { ClientRouter } from "astro:transitions";
     <ClientRouter />
   </head>
   <body class="relative -z-50 bg-background text-text">
-    <main>
+    <main class="flex flex-col min-h-screen">
       {principal && <Header />}
       <slot />
     </main>
@@ -42,18 +42,13 @@ import { ClientRouter } from "astro:transitions";
 <style is:global>
   :root {
     /* variables */
-    /* --primary: #166534;
-    --secondary: #feffbe;
-    --terciary: #cc2936;
-    --cuaternary: #0050ff;
-    --lightsreen: #f8fafc;
-    --darksreen: #2f3037;
 
     /* fonts-variables */
     --font-inter: "Inter Variable", sans-serif;
     --font-redhat: "Red Hat Display Variable", sans-serif;
-    --darksreen: #2f3037; */
+    --darksreen: #2f3037;
 
+    /* colors */
     --text: #0c0d0e;
     --background: #f9fbfb;
     --primary: #1d4266;

@@ -1,10 +1,8 @@
 ---
-import ButtonsPage from "@shared/ButtonsPage.astro";
 interface Props {
   className?: string;
-  hredBtn: string;
 }
-const { className, hredBtn } = Astro.props;
+const { className } = Astro.props;
 ---
 
 <article class:list={["", className]}>
@@ -13,6 +11,7 @@ const { className, hredBtn } = Astro.props;
   </div>
 
   <div class="flex justify-center">
-    <ButtonsPage href={hredBtn} text="ver más" isPrincipal />
+    <slot name="slot-btn" />
+    <!-- <ButtonsPage href={hredBtn} text="ver más" isPrincipal inBlue /> -->
   </div>
 </article>

@@ -1,5 +1,5 @@
 .inputGroup {
-  --soft-purple: #9696c8;
+  --soft-purple: var(--secondary);
 }
 .inputGroup :is(input:focus, input:valid) ~ label {
   transform: translateY(-50%) scale(0.9);

@@ -1,10 +1,11 @@
 ---
 import ContentWrapperCard from "@shared/ContentWrapperCard.astro";
 import SummaryCard from "./components/SummaryCard.astro";
-import { experiences } from "@data/experience";
+import ButtonsPage from "@shared/ButtonsPage.astro";
 import CvIcon from "@summaryCurriculum/icons/Cv.astro";
 import HeaderArticle from "./components/HeaderArticle.astro";
 import MainArticle from "./components/MainArticle.astro";
+import { experiences } from "@data/Experience";
 const exp = experiences.slice(0, 2);
 ---
 
@@ -24,7 +25,6 @@ const exp = experiences.slice(0, 2);
 
   <!-- main -->
   <MainArticle
-    hredBtn="/Curriculum/"
     className="[grid-area:main] hidden md:block w-11/12 mx-auto"
     slot={"content-into-card"}
   >
@@ -38,12 +38,18 @@ const exp = experiences.slice(0, 2);
         />
       ))
     }
+    <ButtonsPage
+      href="/Curriculum/"
+      text="ver más"
+      isPrincipal
+      slot="slot-btn"
+    />
   </MainArticle>
 
   <!-- footer -->
 
   <!-- out card-mobile -->
-  <MainArticle hredBtn="/Curriculum/" slot={"content-out-card"}>
+  <MainArticle slot={"content-out-card"}>
     {
       exp.map(({ position, companyName, date, summary }) => (
         <SummaryCard
@@ -55,5 +61,12 @@ const exp = experiences.slice(0, 2);
         />
       ))
     }
+    <ButtonsPage
+      href="/Curriculum/"
+      text="ver más"
+      isPrincipal
+      inBlue
+      slot="slot-btn"
+    />
   </MainArticle>
 </ContentWrapperCard>

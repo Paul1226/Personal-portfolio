@@ -3,11 +3,21 @@ interface Props {
   href: string;
   text: string;
   isPrincipal?: boolean;
+  inBlue?: boolean;
   pageOut?: boolean;
 }
 
-const { href, text, isPrincipal = false, pageOut = false } = Astro.props;
+const {
+  href,
+  text,
+  isPrincipal = false,
+  pageOut = false,
+  inBlue = false,
+} = Astro.props;
 const target = pageOut ? "_blank" : "_self";
+const colors = inBlue
+  ? "bg-accent border-accent hover:shadow-[0_10px_20px_#f9fbfb40]"
+  : "bg-primary border-primary hover:shadow-btn-pri";
 
 const classLink =
   "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:-translate-y-1 transition-all duration-300";
@@ -16,10 +26,7 @@ const classLink =
 {
   isPrincipal ? (
     <a
-      class:list={[
-        "bg-primary border-primary text-dark-text hover:shadow-btn-pri",
-        classLink,
-      ]}
+      class:list={[" text-dark-text", classLink, colors]}
       href={href}
       target={target}
       rel="noreferrer"

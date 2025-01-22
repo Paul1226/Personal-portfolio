@@ -9,7 +9,7 @@ import BgCardAbout from "../components/BgCardAbout.astro";
     <BgAbout />
 
     <div
-      class="w-11/12 mx-auto max-w-4xl rounded-md content-card py-4 px-6 relative overflow-hidden"
+      class="content-card w-11/12 mx-auto max-w-4xl rounded-md py-4 px-6 relative overflow-hidden"
     >
       <slot name="content-into-card" />
 
@@ -17,7 +17,7 @@ import BgCardAbout from "../components/BgCardAbout.astro";
       <BgCardAbout />
     </div>
   </div>
-  <div class="bg-green-500 content-presentation-description w-full md:hidden">
+  <div class="bg-primary content-presentation-description w-full md:hidden">
     <div class="w-11/12 mx-auto py-6 flex flex-col gap-8">
       <slot name="content-out-card" />
     </div>

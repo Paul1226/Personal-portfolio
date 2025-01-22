@@ -3,7 +3,7 @@ import Cross from "@header/icons/Cross.astro";
 import Menu from "@header/icons/Menu.astro";
 const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
-  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-terciary";
+  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-primary";
 ---
 
 <header class="w-full md:sticky md:top-0 md:left-0 md:z-10">
@@ -30,7 +30,7 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 z-10 h-full bg-gold-100/70 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 z-10 h-full bg-secondary/70 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
         <li>

@@ -29,7 +29,7 @@ import { ClientRouter } from "astro:transitions";
     <title>{title}</title>
     <ClientRouter />
   </head>
-  <body class="relative -z-50 bg-lightscreen">
+  <body class="relative -z-50 bg-background text-text">
     <main>
       {principal && <Header />}
       <slot />
@@ -42,7 +42,7 @@ import { ClientRouter } from "astro:transitions";
 <style is:global>
   :root {
     /* variables */
-    --primary: #166534;
+    /* --primary: #166534;
     --secondary: #feffbe;
     --terciary: #cc2936;
     --cuaternary: #0050ff;
@@ -52,6 +52,22 @@ import { ClientRouter } from "astro:transitions";
     /* fonts-variables */
     --font-inter: "Inter Variable", sans-serif;
     --font-redhat: "Red Hat Display Variable", sans-serif;
+    --darksreen: #2f3037; */
+
+    --text: #0c0d0e;
+    --background: #f9fbfb;
+    --primary: #1d4266;
+    --primary-50: #1d416663;
+    --secondary: #a5c5d5;
+    --terciary: #cdd6de;
+    --terciary-gray: #cdd6de;
+    --accent: #76afcb;
+
+    --dark-text: #f1f2f3;
+    --dark-background: #040606;
+    --dark-primary: #98bde2;
+    --dark-secondary: #2a4a5a;
+    --dark-accent: #346d89;
   }
   * {
     padding: 0;
@@ -78,8 +94,8 @@ import { ClientRouter } from "astro:transitions";
   }
 
   body {
-    --sb-track-color: #ffffff09;
-    --sb-thumb-color: #15803d;
+    --sb-track-color: var(--background);
+    --sb-thumb-color: var(--primary);
     --sb-size: 8px;
   }
 
@@ -95,7 +111,7 @@ import { ClientRouter } from "astro:transitions";
   body::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
     border-radius: 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--sb-track-color);
     /* border-color: var(--sb-track-color); */
   }
 

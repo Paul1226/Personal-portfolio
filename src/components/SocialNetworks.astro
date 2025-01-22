@@ -1,0 +1,47 @@
+---
+import Facebook from "../icons/Facebook.astro";
+import Twitter from "../icons/Twitter.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import Instagram from "../icons/Instagram.astro";
+
+interface Props {
+  inFooter?: boolean;
+}
+
+const { inFooter = false } = Astro.props;
+const bgColor = inFooter ? "bg-terciary-gray" : "bg-white";
+const classIcons = "w-6 h-auto";
+const classLinks =
+  "p-1 rounded-lg hover:bg-secondary transition-colors duration-300 grid place-content-center";
+---
+
+<section class:list={["py-1", bgColor]}>
+  <ul class="flex items-center gap-4 w-full justify-center">
+    <li>
+      <a class={classLinks} href="#"
+        ><Facebook class:list={["", classIcons]} /></a
+      >
+    </li>
+    <li>
+      <a class={classLinks} href="#"
+        ><Twitter class:list={["", classIcons]} /></a
+      >
+    </li>
+    <li>
+      <a class={classLinks} href="#"
+        ><Linkedin class:list={["", classIcons]} /></a
+      >
+    </li>
+    <li>
+      <a class={classLinks} href="#"
+        ><Instagram class:list={["", classIcons]} /></a
+      >
+    </li>
+  </ul>
+</section>
+
+<style>
+  section {
+    grid-area: footer;
+  }
+</style>

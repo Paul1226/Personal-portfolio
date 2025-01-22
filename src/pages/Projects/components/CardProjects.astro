@@ -4,10 +4,16 @@ import Btn from "@shared/ButtonsPage.astro";
 import ListIcons from "./ListIcons.astro";
 
 interface Props {
-  datos: Project;
+  datos: {
+    name: string;
+    description: string;
+    image: string;
+    linkGit: string;
+    linkPage: string;
+    technologies: string[];
+  };
 }
-
-const { name, description, image, linkGit, linkPage, technologies } =
+const { name, description, image, technologies, linkGit, linkPage } =
   Astro.props.datos;
 ---
 

@@ -6,10 +6,7 @@ const { inAbout = false } = Astro.props;
 const maxWidth = inAbout ? "max-w-5xl" : "max-w-6xl";
 ---
 
-<section
-  class="w-full bg-pearl-50 py-8"
-  style="background-image:url(/textures/wood-pattern.png)"
->
+<section class="w-full bg-lightscreen py-8">
   <main class:list={["w-11/12 mx-auto flex flex-col gap-8", maxWidth]}>
     <slot />
   </main>

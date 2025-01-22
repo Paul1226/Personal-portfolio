@@ -9,10 +9,10 @@ interface Props {
 }
 
 const { inFooter = false } = Astro.props;
-const bgColor = inFooter ? "bg-lightscreen" : "bg-white";
+const bgColor = inFooter ? "bg-terciary-gray" : "bg-white";
 const classIcons = "w-6 h-auto";
 const classLinks =
-  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center";
+  "p-1 rounded-lg hover:bg-secondary transition-colors duration-300 grid place-content-center";
 ---
 
 <section class:list={["py-1", bgColor]}>

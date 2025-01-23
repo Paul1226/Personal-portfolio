@@ -1,16 +1,16 @@
 ---
+import { type Project } from "@data/Projects";
 import Btn from "@shared/ButtonsPage.astro";
 import ListIcons from "./ListIcons.astro";
 
-import { type Project } from "@data/Projects";
 interface Props {
   datos: Project;
 }
 const { datos } = Astro.props;
 if (!datos) {
-  throw new Error("La prop 'datos' es requerida en CardProjects");
+  throw new Error("No se han proporcionado datos para el proyecto");
 }
-const { name, description, image, technologies, linkGit, linkPage } = datos;
+const { name, description, image, linkGit, linkPage, technologies } = datos;
 ---
 
 <article
@@ -31,7 +31,7 @@ const { name, description, image, technologies, linkGit, linkPage } = datos;
     <img
       class="w-full h-full aspect-video object-cover brightness-90"
       src={image}
-      alt=`Proyecto de ${name}`
+      alt={`Proyecto de ${name}`}
       loading="lazy"
     />
   </figure>

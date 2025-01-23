@@ -7,7 +7,6 @@ import SectionWrapperCards from "@components/SectionWrapperCards.astro";
 import CardProjects from "./components/CardProjects.astro";
 import SliderSkills from "./components/SliderSkills.astro";
 import { projects } from "@data/Projects";
-const projectsAll = projects || [];
 ---
 
 <Layout title="Paul Dev - Projects">
@@ -19,7 +18,7 @@ const projectsAll = projects || [];
       <Briefcase slot={"icon-in-title"} />
     </HeaderPage>
     <SectionWrapperCards>
-      {projectsAll.map((project) => <CardProjects datos={{ ...project }} />)}
+      {projects.map((project) => <CardProjects datos={{ ...project }} />)}
     </SectionWrapperCards>
   </SectionWrapper>
   <SliderSkills />

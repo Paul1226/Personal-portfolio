@@ -1,20 +1,13 @@
 ---
-import { type Project } from "@data/Projects";
 import Btn from "@shared/ButtonsPage.astro";
 import ListIcons from "./ListIcons.astro";
 
+import { type Project } from "@data/Projects";
 interface Props {
-  datos: {
-    name: string;
-    description: string;
-    image: string;
-    linkGit: string;
-    linkPage: string;
-    technologies: string[];
-  };
+  datos: Project;
 }
-const { name, description, image, technologies, linkGit, linkPage } =
-  Astro.props.datos;
+const { datos } = Astro.props;
+const { name, description, image, technologies, linkGit, linkPage } = datos;
 ---
 
 <article
@@ -35,7 +28,7 @@ const { name, description, image, technologies, linkGit, linkPage } =
     <img
       class="w-full h-full aspect-video object-cover brightness-90"
       src={image}
-      alt={`Proyecto de ${name}`}
+      alt=`Proyecto de ${name}`
       loading="lazy"
     />
   </figure>

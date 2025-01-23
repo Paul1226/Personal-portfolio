@@ -7,7 +7,7 @@ import SectionWrapperCards from "@components/SectionWrapperCards.astro";
 import CardProjects from "./components/CardProjects.astro";
 import SliderSkills from "./components/SliderSkills.astro";
 import { projects } from "@data/Projects";
-const projectsAll = projects;
+const projectsAll = projects || [];
 ---
 
 <Layout title="Paul Dev - Projects">

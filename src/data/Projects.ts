@@ -1,4 +1,4 @@
-export type Project = {
+export interface Project {
   name: string;
   description: string;
   image: string;
@@ -6,7 +6,7 @@ export type Project = {
   linkGit: string;
   linkPage: string;
   summary: string;
-};
+}
 
 export const projects: Project[] = [
   {

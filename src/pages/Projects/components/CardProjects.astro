@@ -7,6 +7,9 @@ interface Props {
   datos: Project;
 }
 const { datos } = Astro.props;
+if (!datos) {
+  throw new Error("La prop 'datos' es requerida en CardProjects");
+}
 const { name, description, image, technologies, linkGit, linkPage } = datos;
 ---
 

@@ -19,7 +19,7 @@ const projectsAll = projects || [];
       <Briefcase slot={"icon-in-title"} />
     </HeaderPage>
     <SectionWrapperCards>
-      {projectsAll.map((project) => <CardProjects datos={project} />)}
+      {projectsAll.map((project) => <CardProjects datos={{ ...project }} />)}
     </SectionWrapperCards>
   </SectionWrapper>
   <SliderSkills />

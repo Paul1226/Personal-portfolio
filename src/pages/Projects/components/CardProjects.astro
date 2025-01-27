@@ -4,13 +4,14 @@ import Btn from "@shared/ButtonsPage.astro";
 import ListIcons from "./ListIcons.astro";
 
 interface Props {
-  datos: Project;
+  datos?: Project;
 }
-const { datos } = Astro.props;
+const { datos = {} as Project } = Astro.props;
 if (!datos) {
+  console.log(datos);
   throw new Error("No se han proporcionado datos para el proyecto");
 }
-const { name, description, image, linkGit, linkPage, technologies } = datos;
+const { name, technologies, description, linkPage, linkGit, image } = datos;
 ---
 
 <article

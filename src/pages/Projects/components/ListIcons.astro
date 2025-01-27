@@ -6,51 +6,52 @@ import Tailwind from "../icons/Tailwind.astro";
 import TypeScript from "../icons/TypeScript.astro";
 
 interface Props {
-  list: string[];
+  list?: string[];
 }
-const list = Astro.props.list;
+const { list = [] } = Astro.props;
 const styleIcon = "h-5 w-auto";
 ---
 
 <ul class="flex items-center gap-2">
   {
-    list.map((tecn) => {
-      if (tecn === "Astro") {
-        return (
-          <li>
-            <AstroIcon class={styleIcon} />
-          </li>
-        );
-      }
-      if (tecn === "Css") {
-        return (
-          <li>
-            <Css class={styleIcon} />
-          </li>
-        );
-      }
-      if (tecn === "JavaScript") {
-        return (
-          <li>
-            <JavaScript class={styleIcon} />
-          </li>
-        );
-      }
-      if (tecn === "TypeScript") {
-        return (
-          <li>
-            <TypeScript class={styleIcon} />
-          </li>
-        );
-      }
-      if (tecn === "Tailwind") {
-        return (
-          <li>
-            <Tailwind class={styleIcon} />
-          </li>
-        );
-      }
-      return <li>{tecn}</li>;
-    })
+    list &&
+      list.map((tecn) => {
+        if (tecn === "Astro") {
+          return (
+            <li>
+              <AstroIcon class={styleIcon} />
+            </li>
+          );
+        }
+        if (tecn === "Css") {
+          return (
+            <li>
+              <Css class={styleIcon} />
+            </li>
+          );
+        }
+        if (tecn === "JavaScript") {
+          return (
+            <li>
+              <JavaScript class={styleIcon} />
+            </li>
+          );
+        }
+        if (tecn === "TypeScript") {
+          return (
+            <li>
+              <TypeScript class={styleIcon} />
+            </li>
+          );
+        }
+        if (tecn === "Tailwind") {
+          return (
+            <li>
+              <Tailwind class={styleIcon} />
+            </li>
+          );
+        }
+        return <li>{tecn}</li>;
+      })
   }
 </ul>

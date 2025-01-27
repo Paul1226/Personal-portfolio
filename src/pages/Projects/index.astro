@@ -6,7 +6,13 @@ import Briefcase from "@summaryProjects/icons/Briefcase.astro";
 import SectionWrapperCards from "@components/SectionWrapperCards.astro";
 import CardProjects from "./components/CardProjects.astro";
 import SliderSkills from "./components/SliderSkills.astro";
+
+import { type Project } from "@data/Projects";
 import { projects } from "@data/Projects";
+const dates: Project[] = projects;
+if (!dates) {
+  throw new Error("No se han enviado datos para el proyecto");
+}
 ---
 
 <Layout title="Paul Dev - Projects">
@@ -18,7 +24,7 @@ import { projects } from "@data/Projects";
       <Briefcase slot={"icon-in-title"} />
     </HeaderPage>
     <SectionWrapperCards>
-      {projects.map((project) => <CardProjects datos={{ ...project }} />)}
+      {dates.map((project) => <CardProjects datos={project} />)}
     </SectionWrapperCards>
   </SectionWrapper>
   <SliderSkills />

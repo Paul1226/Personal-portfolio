@@ -7,9 +7,9 @@ interface Props {
 }
 
 const { inFooter = false } = Astro.props;
-const bgColor = inFooter ? "bg-lightscreen" : "bg-white";
+const bgColor = inFooter ? "bg-transparent" : "bg-white";
 const classLinks =
-  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center";
+  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center dark:text-dark-background";
 ---
 
 <section class:list={["py-1 h-max", bgColor]}>

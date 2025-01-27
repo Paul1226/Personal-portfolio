@@ -10,7 +10,9 @@ const classP = "font-light md:font-normal";
 const classStrong = "font-bold";
 ---
 
-<div class:list={[textColor, className, "flex flex-col gap-4"]}>
+<div
+  class:list={[textColor, className, "flex flex-col gap-4 dark:text-dark-text"]}
+>
   <p class={classP}>
     Soy un <strong class={classStrong}>desarrollador front-end</strong> enfocado
     en crear soluciones digitales eficientes y creativas, especializado en <strong

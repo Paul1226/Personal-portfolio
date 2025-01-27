@@ -7,7 +7,7 @@ interface Props {
 const { title, nameArea } = Astro.props;
 ---
 
-<article class:list={["w-full", nameArea]}>
+<article class:list={["w-full dark:text-dark-background", nameArea]}>
   <TitlePage text={title}>
     <slot name="icon-title" />
   </TitlePage>

@@ -44,9 +44,6 @@ export default {
           900: "#593d35",
           950: "#2f1e1b",
         },
-        bluee: {
-          500: "#0050FF",
-        },
         text: "#0c0d0e",
         background: "#f9fbfb",
         primary: "#1d4266",
@@ -56,7 +53,7 @@ export default {
         "terciary-gray": "#CDD6DE",
         accent: "#76afcb",
         "dark-text": "#f1f2f3",
-        "dark-background": "#040606",
+        "dark-background": "#111827 ",
         "dark-primary": "#98bde2",
         "dark-secondary": "#2a4a5a",
         "dark-accent": "#346d89",
@@ -67,4 +64,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: "class",
 };

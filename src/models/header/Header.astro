@@ -1,6 +1,7 @@
 ---
 import Cross from "@header/icons/Cross.astro";
 import Menu from "@header/icons/Menu.astro";
+import { ThemeToggle } from "@shared/BtnChangeMode";
 const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
   "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-primary";
@@ -21,6 +22,8 @@ const classLink =
         <span class="uppercase tracking-wide">/ Frontend developer</span>
       </a>
     </div>
+
+    <ThemeToggle client:load />
 
     <nav class="nav-container">
       <div class="content-btns grid place-content-center md:hidden">
@@ -122,6 +125,14 @@ const classLink =
       animation-timeline: scroll(root block);
       animation-range: 0 100px;
     }
+    .nav-container li a.active {
+      color: var(--primary);
+    }
+    html.dark header {
+      animation: scroll-header-dark linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100px;
+    }
   }
 
   @keyframes scroll-header {
@@ -131,6 +142,15 @@ const classLink =
       border-bottom-left-radius: 0.75rem;
       border-bottom-right-radius: 0.75rem;
       box-shadow: 0 10px 10px #00000020;
+    }
+  }
+  @keyframes scroll-header-dark {
+    100% {
+      background-color: #040606a2;
+      backdrop-filter: blur(0.7rem);
+      border-bottom-left-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+      box-shadow: 0 10px 15px #ffffff10;
     }
   }
 </style>

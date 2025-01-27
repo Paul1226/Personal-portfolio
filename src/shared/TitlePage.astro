@@ -6,8 +6,11 @@ const { text } = Astro.props;
 ---
 
 <header class="flex items-center justify-center gap-3">
-  <div class="size-4 aspect-square bg-accent rounded-[4px]"></div>
-  <h2 class="text-3xl font-black capitalize">{text}</h2>
+  <div class="size-4 aspect-square bg-accent rounded-[4px] dark:bg-primary">
+  </div>
+  <h2 class="text-3xl font-black capitalize">
+    {text}
+  </h2>
   <figure class="h-8 aspect-square">
     <slot />
   </figure>

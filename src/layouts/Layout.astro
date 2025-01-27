@@ -29,7 +29,9 @@ import { ClientRouter } from "astro:transitions";
     <title>{title}</title>
     <ClientRouter />
   </head>
-  <body class="relative -z-50 bg-background text-text">
+  <body
+    class="relative -z-50 bg-background text-text dark:bg-dark-background dark:text-dark-text transition-colors duration-300 ease-in-out"
+  >
     <main class="flex flex-col min-h-screen">
       {principal && <Header />}
       <slot />

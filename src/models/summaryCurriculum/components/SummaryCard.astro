@@ -7,14 +7,16 @@ interface Props {
   inGreen?: boolean;
 }
 const { position, companyName, dates, summary, inGreen = false } = Astro.props;
-const textColor = inGreen ? "text-white" : "text-black";
-const textParagraph = inGreen ? "text-dark-text" : "text-gray-800";
+const textColor = inGreen ? "text-white " : "text-black dark:text-dark-text";
+const textParagraph = inGreen
+  ? "text-dark-text"
+  : "text-gray-800 dark:text-gray-400";
 const titleGreen = inGreen ? "text-gold-400" : "text-accent";
 const bgGreen = inGreen ? "bg-gold-400" : "bg-primary";
 ---
 
 <div
-  class="relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+  class="relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-terciary-gray before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4] dark:before:border-terciary-gray/40"
 >
   <div class="relative pb-5 md:col-span-2">
     <div class="sticky top-0">

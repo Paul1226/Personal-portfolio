@@ -3,7 +3,9 @@ import InputWrapper from "./InputWrapper.astro";
 import "../styles/inputsStyles.css";
 ---
 
-<div class="bg-white shadow-md rounded-lg p-6 sm:p-10 max-w-lg mx-auto">
+<div
+  class="bg-white shadow-md rounded-lg p-6 sm:p-10 max-w-lg mx-auto dark:bg-porcelain"
+>
   <form
     action="https://formsubmit.co/paulguachichullca023@gmail.com"
     method="POST"
@@ -21,12 +23,12 @@ import "../styles/inputsStyles.css";
         name="message"
         id="message"
         rows="4"
-        class="text-[100%] p-2 outline-none border-2 border-solid border-[#c8c8c8] bg-transparent rounded-lg w-full resize-none"
+        class="text-[100%] p-2 outline-none border-2 border-solid border-regentStBlue bg-transparent rounded-lg w-full resize-none"
         required
         style="form-sizing: content;"></textarea>
       <label
         for="message"
-        class="text-[100%] absolute left-0 p-2 ml-2 pointer-events-none transition-all ease-linear text-[#646464] capitalize"
+        class="text-[100%] absolute left-0 p-2 ml-2 pointer-events-none transition-all ease-linear text-slate-400 capitalize"
         >Mensaje</label
       >
     </div>

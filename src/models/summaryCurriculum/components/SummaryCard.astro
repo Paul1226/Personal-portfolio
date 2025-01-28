@@ -7,16 +7,26 @@ interface Props {
   inGreen?: boolean;
 }
 const { position, companyName, dates, summary, inGreen = false } = Astro.props;
-const textColor = inGreen ? "text-white " : "text-black dark:text-dark-text";
+const textColor = inGreen
+  ? "text-whiteHaze dark:text-woodSmoke"
+  : "text-woodSmoke dark:text-whiteHaze";
 const textParagraph = inGreen
-  ? "text-dark-text"
-  : "text-gray-800 dark:text-gray-400";
-const titleGreen = inGreen ? "text-gold-400" : "text-accent";
-const bgGreen = inGreen ? "bg-gold-400" : "bg-primary";
+  ? "text-whiteHaze/80 dark:text-woodSmoke/90"
+  : "text-slate-700 dark:text-whiteHaze/80";
+const titleGreen = inGreen
+  ? "text-gold-400 dark:text-regalBlue"
+  : "text-accent";
+const bgGreen = inGreen ? "bg-gold-400 dark:bg-regalBlue" : "bg-accent";
+const sticky = inGreen
+  ? "before:border-whiteHaze/40 dark:before:border-woodSmoke/40"
+  : "before:border-woodSmoke/10 dark:before:border-whiteHaze/10";
 ---
 
 <div
-  class="relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-terciary-gray before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4] dark:before:border-terciary-gray/40"
+  class:list={[
+    "relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-terciary-gray before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]",
+    sticky,
+  ]}
 >
   <div class="relative pb-5 md:col-span-2">
     <div class="sticky top-0">
@@ -42,7 +52,7 @@ const bgGreen = inGreen ? "bg-gold-400" : "bg-primary";
   </div>
   <div
     class:list={[
-      "relative flex flex-col gap-2 pb-4 md:col-span-3",
+      "relative font-light flex flex-col gap-2 pb-4 md:col-span-3",
       textParagraph,
     ]}
   >

@@ -4,15 +4,15 @@ interface Props {
   className?: string;
 }
 const { isDark = true, className } = Astro.props;
-const textColor: string = isDark ? "text-text" : "text-white";
+const textColor: string = isDark
+  ? "text-woodSmoke dark:text-whiteHaze"
+  : "text-whiteHaze dark:text-woodSmoke";
 
-const classP = "font-light md:font-normal";
+const classP = "font-light";
 const classStrong = "font-bold";
 ---
 
-<div
-  class:list={[textColor, className, "flex flex-col gap-4 dark:text-dark-text"]}
->
+<div class:list={[textColor, className, "flex flex-col gap-4"]}>
   <p class={classP}>
     Soy un <strong class={classStrong}>desarrollador front-end</strong> enfocado
     en crear soluciones digitales eficientes y creativas, especializado en <strong
@@ -24,7 +24,7 @@ const classStrong = "font-bold";
   <p class={classP}>
     Me destaco por mi responsabilidad y compromiso en cada proyecto. Si buscas
     creatividad y eficiencia, <a
-      class="font-bold transition-all duration-300 hover:scale-105 hover:text-accent inline-block"
+      class="font-bold transition-all duration-300 hover:scale-105 hover:text-accent dark:hover:text-regalBlue inline-block"
       href="/Contact/">¡HABLEMOS!</a
     >
   </p>

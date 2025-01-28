@@ -12,5 +12,11 @@ const { nameTitle, shortDetail } = Astro.props;
   <TitlePage text={nameTitle}>
     <slot name="icon-in-title" />
   </TitlePage>
-  {shortDetail && <p class="w-full max-w-xl mx-auto pt-4">{shortDetail}</p>}
+  {
+    shortDetail && (
+      <p class="w-full max-w-xl mx-auto pt-4 dark:text-whiteHaze dark:font-extralight dark:text-whiteHaze/80">
+        {shortDetail}
+      </p>
+    )
+  }
 </header>

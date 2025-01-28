@@ -4,9 +4,11 @@ interface Props {
   className?: string;
 }
 const { isDark = true, className } = Astro.props;
-const textColor: string = isDark ? "text-text" : "text-white";
+const textColor: string = isDark
+  ? "dark:text-whiteHaze"
+  : "text-whiteHaze dark:text-woodSmoke";
 ---
 
 <div class:list={[textColor, className, "flex flex-col gap-4"]}>
-  <h1 class="text-5xl font-bold dark:text-dark-text">¡Hola! 👋</h1>
+  <h1 class="text-5xl font-bold">¡Hola! 👋</h1>
 </div>

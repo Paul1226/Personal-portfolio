@@ -4,11 +4,11 @@ import Menu from "@header/icons/Menu.astro";
 import { ThemeToggle } from "@shared/BtnChangeMode";
 const currentPath = new URL(Astro.request.url).pathname;
 const classLink =
-  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-primary";
+  "px-2 py-1 block uppercase text-2xl font-semibold tracking-wide transition-colors duration-300 md:text-lg md:font-light hover:text-glacier-600";
 ---
 
 <header
-  class="w-full max-w-[1366px] mx-auto md:sticky md:top-0 md:left-0 md:z-10"
+  class="w-full max-w-[1366px] mx-auto md:sticky md:top-0 md:left-0 md:z-10 dark:text-whiteHaze"
 >
   <section
     class="flex justify-between items-center w-full max-w-6xl mx-auto px-4 py-5"
@@ -16,7 +16,9 @@ const classLink =
     <div class="logo">
       <a href="/" class="flex flex-col md:flex-row md:items-end relative z-20">
         <div class="flex items-center gap-2">
-          <span class="block bg-primary w-4 h-4 rounded-sm"></span>
+          <span
+            class="block bg-regalBlue w-4 h-4 rounded-sm dark:bg-regalBlueDark"
+          ></span>
           <span class="font-black text-3xl">Paul Dev</span>
         </div>
         <span class="uppercase tracking-wide">/ Frontend developer</span>
@@ -35,7 +37,7 @@ const classLink =
         </a>
       </div>
       <ul
-        class="nav-list absolute left-0 right-0 z-10 h-full bg-secondary/70 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
+        class="nav-list absolute left-0 right-0 z-10 h-full bg-regentStBlue/70 dark:bg-glacier-950/90 backdrop-blur-lg flex justify-center items-center flex-col gap-2 md:relative md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none md:flex-row md:z-0"
         id="nav"
       >
         <li>
@@ -110,7 +112,7 @@ const classLink =
   }
 
   .nav-list li a.active {
-    color: var(--terciary);
+    @apply text-glacier-600;
   }
 
   .nav-container:has(.nav-list:target) {
@@ -126,7 +128,7 @@ const classLink =
       animation-range: 0 100px;
     }
     .nav-container li a.active {
-      color: var(--primary);
+      @apply text-glacier-600;
     }
     html.dark header {
       animation: scroll-header-dark linear both;
@@ -141,7 +143,7 @@ const classLink =
       backdrop-filter: blur(0.7rem);
       border-bottom-left-radius: 0.75rem;
       border-bottom-right-radius: 0.75rem;
-      box-shadow: 0 10px 10px #00000020;
+      box-shadow: 0 10px 15px #00000020;
     }
   }
   @keyframes scroll-header-dark {

@@ -15,14 +15,16 @@ const { name, technologies, description, linkPage, linkGit, image } = datos;
 ---
 
 <article
-  class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg shadow-lg pl-5 bg-white"
+  class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg shadow-lg pl-5 bg-white dark:bg-porcelain transition-colors duration-300 ease-in-out"
 >
   <div class="flex flex-col gap-4">
-    <header class="relative before:bg-primary">
-      <h5 class="text-primary font-bold">{name}</h5>
+    <header class="relative before:bg-regalBlue dark:before:bg-regalBlueDark">
+      <h5 class="text-regalBlue dark:text-regalBlueDark font-bold">
+        {name}
+      </h5>
       <ListIcons list={technologies} />
     </header>
-    <p>{description}</p>
+    <p class="dark:text-whiteHaze/80 dark:font-extralight">{description}</p>
     <div class="links flex items-center gap-4">
       <Btn href={linkPage} isPrincipal text="Visitar" pageOut />
       <Btn href={linkGit} text="Código" pageOut />

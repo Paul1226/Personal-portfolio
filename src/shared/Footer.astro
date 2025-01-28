@@ -2,16 +2,14 @@
 import SocialNetworks from "@hero/components/SocialNetworks.astro";
 ---
 
-<footer
-  class="w-full py-8 bg-terciary-gray max-w-[1366px] mx-auto dark:bg-gray-950"
->
+<footer class="w-full py-8 bg-glacier-975 max-w-[1366px] mx-auto">
   <div
     class="w-11/12 mx-auto max-w-6xl flex flex-col gap-6 md:flex-row md:justify-between md:items-center"
   >
-    <article class="order-2 md:order-1 w-max">
+    <article class="order-2 md:order-1 w-max text-whiteHaze">
       <h4 class="pb-2">Política de privacidad</h4>
-      <p class="text-sm text-gray-800">@2024 Creado por PaulDev</p>
-      <p class="text-sm text-gray-800">
+      <p class="subcontent">@2024 Creado por PaulDev</p>
+      <p class="subcontent">
         Inspirado de <a
           class="underline"
           href="https://manage.wix.com/dashboard/b3c75237-4540-4678-a565-805306d0a090/setup"
@@ -19,17 +17,18 @@ import SocialNetworks from "@hero/components/SocialNetworks.astro";
         >
       </p>
     </article>
+
     <article
-      class="w-full flex items-center justify-between flex-wrap order-1 gap-4 md:order-2 md:justify-start md:w-max"
+      class="w-full flex items-center justify-between flex-wrap order-1 gap-4 md:order-2 md:justify-start md:w-max text-whiteHaze"
     >
       <div class="content">
         <strong>llama</strong>
-        <p class="text-gray-800">+593 98 0958291</p>
+        <p class="subcontent">+593 98 0958291</p>
       </div>
       <div class="content">
         <strong>escribe</strong>
         <a
-          class="block truncate text-gray-800"
+          class="block truncate subcontent"
           href="mailto:paulguachichullca023@gmail.com"
           >paulguachichullca023@gmail.com</a
         >
@@ -43,6 +42,13 @@ import SocialNetworks from "@hero/components/SocialNetworks.astro";
 </footer>
 
 <style>
+  .subcontent {
+    /* @apply text-sm text-gray-800; */
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 200;
+    color: whitesmoke;
+  }
   .content {
     width: 180px;
     /* background-color: red; */

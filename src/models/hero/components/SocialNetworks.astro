@@ -7,23 +7,27 @@ interface Props {
 }
 
 const { inFooter = false } = Astro.props;
-const bgColor = inFooter ? "bg-transparent" : "bg-white";
+const colors = inFooter
+  ? "hover:bg-glacier-800"
+  : "hover:bg-glacier-300 dark:hover:bg-glacier-950";
 const classLinks =
-  "p-1 rounded-lg hover:bg-slate-100 transition-colors duration-300 grid place-content-center dark:text-dark-background";
+  "p-1 rounded-lg transition-colors duration-300 grid place-content-center dark:text-regentStBlue";
 ---
 
-<section class:list={["py-1 h-max", bgColor]}>
+<section class="py-1 h-max bg-transparent">
   <ul class="flex items-center gap-4 w-full justify-center">
     <li>
       <a
-        class={classLinks}
+        class:list={[classLinks, colors]}
         href="https://www.linkedin.com/in/paul-guachichullca-2287602b1/"
         target="_blank"><Linkedin /></a
       >
     </li>
     <li>
-      <a class={classLinks} href="https://github.com/Paul1226" target="_blank"
-        ><GitHubIcon /></a
+      <a
+        class:list={[classLinks, colors]}
+        href="https://github.com/Paul1226"
+        target="_blank"><GitHubIcon /></a
       >
     </li>
   </ul>

@@ -16,17 +16,21 @@ const {
 } = Astro.props;
 const target = pageOut ? "_blank" : "_self";
 const colors = inBlue
-  ? "bg-accent border-accent hover:shadow-[0_10px_20px_#f9fbfb40]"
-  : "bg-primary border-primary hover:shadow-btn-pri";
+  ? "hover:shadow-[0_10px_20px_#0c0d0e80] bg-glacier-600 border-glacier-600 text-whiteHaze dark:bg-glacier-900 dark:border-glacier-900 dark:text-whiteHaze dark:hover:shadow-[0_10px_20px_#25425570]"
+  : "text-whiteHaze bg-regalBlue border-regalBlue dark:text-woodSmoke ";
 
 const classLink =
-  "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:-translate-y-1 transition-all duration-300";
+  "block px-4 py-2 rounded-full w-max uppercase font-semibold border border-solid text-sm hover:-translate-y-1 transition-all duration-300 ease-in-out";
 ---
 
 {
   isPrincipal ? (
     <a
-      class:list={[" text-dark-text", classLink, colors]}
+      class:list={[
+        "hover:shadow-[0px_0px_30px_#192b3890] dark:bg-regalBlueDark dark:border-regalBlueDark dark:hover:shadow-[0px_0px_30px_#f1f2f350]",
+        classLink,
+        colors,
+      ]}
       href={href}
       target={target}
       rel="noreferrer"
@@ -34,7 +38,11 @@ const classLink =
       {text}
     </a>
   ) : (
-    <a class:list={[classLink, "border-secondary"]} href={href} target={target}>
+    <a
+      class:list={[classLink, "border-regentStBlue dark:text-whiteHaze"]}
+      href={href}
+      target={target}
+    >
       {text}
     </a>
   )

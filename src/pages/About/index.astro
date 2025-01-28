@@ -23,7 +23,9 @@ import SectionWrapper from "@components/SectionWrapper.astro";
       <article
         class="[grid-area:img-content] grid place-content-center shadow-xl"
       >
-        <figure class="w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
+        <figure
+          class="w-full max-w-4xl mx-auto rounded-lg overflow-hidden aspect-auto"
+        >
           <img
             class="w-full aspect-square object-cover"
             src="/images/paul-dev-4.webp"
@@ -53,7 +55,7 @@ import SectionWrapper from "@components/SectionWrapper.astro";
           cómo la tecnología puede convertir ideas en proyectos reales. Este descubrimiento
           despertó mi curiosidad y me llevó a especializarme en desarrollo web, aprendiendo
           en academias como <a
-            class="text-accent"
+            class="text-glacier-600 dark:text-glacier-400"
             href="https://www.conquerx.com/"
             target="_blank"><strong>ConquerBlocks</strong></a
           > y participando en proyectos que combinan diseño y funcionalidad.
@@ -90,6 +92,9 @@ import SectionWrapper from "@components/SectionWrapper.astro";
 </Layout>
 
 <style>
+  strong {
+    font-weight: 600;
+  }
   .content-clips {
     display: grid;
     grid-template-columns: 1fr;

@@ -30,7 +30,7 @@ import { ClientRouter } from "astro:transitions";
     <ClientRouter />
   </head>
   <body
-    class="relative -z-50 bg-background text-text dark:bg-dark-background dark:text-dark-text transition-colors duration-300 ease-in-out"
+    class="relative -z-50 bg-whiteHaze dark:bg-woodSmoke transition-colors duration-300 ease-in-out"
   >
     <main class="flex flex-col min-h-screen">
       {principal && <Header />}
@@ -43,28 +43,22 @@ import { ClientRouter } from "astro:transitions";
 
 <style is:global>
   :root {
-    /* variables */
-
     /* fonts-variables */
     --font-inter: "Inter Variable", sans-serif;
     --font-redhat: "Red Hat Display Variable", sans-serif;
-    --darksreen: #2f3037;
 
     /* colors */
-    --text: #0c0d0e;
-    --background: #f9fbfb;
-    --primary: #1d4266;
-    --primary-50: #1d416663;
-    --secondary: #a5c5d5;
-    --terciary: #cdd6de;
-    --terciary-gray: #cdd6de;
+    --woodSmoke: #0c0d0e;
+    --whiteHaze: #f9f3f4;
+    --regalBlue: #1d4266;
+    --regalBlueOpacity-50: #1d426663;
+    --regentStBlue: #a5c5d5;
+    --porcelain: #edf1f3;
+    --iron: #cdd6de;
     --accent: #76afcb;
-
-    --dark-text: #f1f2f3;
-    --dark-background: #040606;
-    --dark-primary: #98bde2;
-    --dark-secondary: #2a4a5a;
-    --dark-accent: #346d89;
+    --regalBlueDark: #98bde2;
+    --regentStBlueDark: #2a4a5a;
+    --accentDark: #346d89;
   }
   * {
     padding: 0;
@@ -91,8 +85,8 @@ import { ClientRouter } from "astro:transitions";
   }
 
   body {
-    --sb-track-color: var(--background);
-    --sb-thumb-color: var(--primary);
+    --sb-track-color: var(--whiteHaze);
+    --sb-thumb-color: var(--regalBlue);
     --sb-size: 8px;
   }
 

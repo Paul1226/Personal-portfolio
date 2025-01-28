@@ -3,6 +3,10 @@ import { skills } from "@data/Skills";
 
 const skillsPrim = skills.slice(0, 6);
 const skillsSec = skills.slice(6, 12);
+const classFigurePrim =
+  "flex items-center justify-center gap-4 p-3 bg-white dark:bg-porcelain rounded-lg shadow-lg min-w-40 w-full transition-colors duration-300 ease-in-out";
+const classFigureSec =
+  "flex items-center justify-center gap-4 p-3 bg-white dark:bg-porcelain rounded-lg shadow-md w-full min-w-40 transition-colors duration-300 ease-in-out";
 ---
 
 <section class="w-full max-w-5xl mx-auto">
@@ -12,7 +16,7 @@ const skillsSec = skills.slice(6, 12);
       {
         skillsPrim.map((skill) => (
           <li>
-            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md min-w-40 w-full">
+            <figure class={classFigurePrim}>
               <img
                 class="w-full max-w-10"
                 src={skill.image}
@@ -28,7 +32,7 @@ const skillsSec = skills.slice(6, 12);
       {
         skillsPrim.map((skill) => (
           <li>
-            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md min-w-40 w-full">
+            <figure class={classFigurePrim}>
               <img
                 class="w-full max-w-10"
                 src={skill.image}
@@ -46,7 +50,7 @@ const skillsSec = skills.slice(6, 12);
       {
         skillsSec.map((skill) => (
           <li>
-            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md w-full min-w-40">
+            <figure class={classFigureSec}>
               <img
                 class="w-full max-w-10"
                 src={skill.image}
@@ -62,7 +66,7 @@ const skillsSec = skills.slice(6, 12);
       {
         skillsSec.map((skill) => (
           <li>
-            <figure class="flex items-center justify-center gap-4 p-3 bg-white rounded-lg shadow-md w-full min-w-40">
+            <figure class={classFigureSec}>
               <img
                 class="w-full max-w-10"
                 src={skill.image}
@@ -82,10 +86,10 @@ const skillsSec = skills.slice(6, 12);
   .bg-gradiente-slider {
     background: linear-gradient(
       90deg,
-      #f8fafc 3%,
-      #f8fafc10 15%,
-      #f8fafc10 85%,
-      #f8fafc 97%
+      #f1f2f3 3%,
+      #f1f2f310 15%,
+      #f1f2f310 85%,
+      #f1f2f3 97%
     );
     /* background: linear-gradient(90deg, #f00, #0f0); */
   }
@@ -102,5 +106,14 @@ const skillsSec = skills.slice(6, 12);
     100% {
       transform: translateX(-50%);
     }
+  }
+  html.dark .bg-gradiente-slider {
+    background: linear-gradient(
+      90deg,
+      #0c0d0e 3%,
+      #0c0d0e10 15%,
+      #0c0d0e10 85%,
+      #0c0d0e 97%
+    );
   }
 </style>
